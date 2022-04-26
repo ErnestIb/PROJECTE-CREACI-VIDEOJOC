@@ -171,7 +171,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 708e33664977c384cb11e3e2b0192158, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -307,27 +307,27 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: 366280200
-      e01: 1.5855863e+29
-      e02: 366288900
-      e03: 366288900
-      e10: 8e-45
-      e11: 4.85e-43
-      e12: 8e-45
-      e13: 8e-45
-      e20: 7.1242856e-35
-      e21: 1.5855546e+29
-      e22: -0.0000000016759154
-      e23: 1.5855546e+29
+      e00: 0
+      e01: -1.590162e+29
+      e02: -0.017415702
+      e03: -0.017415702
+      e10: 0
+      e11: 8.79e-43
+      e12: 2.66e-43
+      e13: 2.66e-43
+      e20: -4.5611876e-20
+      e21: -1.5901304e+29
+      e22: 0.000000002562965
+      e23: -1.5901304e+29
       e30: 4.5905e-41
-      e31: 4.85e-43
-      e32: 4.82e-43
-      e33: 4.85e-43
+      e31: 8.79e-43
+      e32: 8.77e-43
+      e33: 8.79e-43
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 0, g: 0, b: 0, a: 0}
   - m_RefCount: 0
-    m_Data: {r: 1.5854337e+29, g: 1.5854337e+29, b: 1.5854337e+29, a: 1.5854337e+29}
+    m_Data: {r: -1.58968e+29, g: -1.58968e+29, b: -1.58968e+29, a: -1.58968e+29}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -405,7 +405,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.640334
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
