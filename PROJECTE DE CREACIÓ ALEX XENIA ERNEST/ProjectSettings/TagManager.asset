@@ -47,6 +47,12 @@ TagManager:
   - name: Base
     uniqueID: 872985443
     locked: 0
+  - name: Neu
+    uniqueID: 2757503523
+    locked: 0
+  - name: Riu
+    uniqueID: 3322953409
+    locked: 0
   - name: Arbres
     uniqueID: 1966227791
     locked: 0
