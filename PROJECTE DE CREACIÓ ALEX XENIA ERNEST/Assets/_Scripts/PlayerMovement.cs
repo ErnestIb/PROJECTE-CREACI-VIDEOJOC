@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public float horizontal;
     public float vertical;
 
+    public Animator animator;
+    Vector2 movement;
+
     void Start()
     {
         
@@ -24,10 +27,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        float y = horizontal * speed * Time.deltaTime;
-        float x = vertical * speed * Time.deltaTime;
+        movement.y = horizontal * speed * Time.deltaTime;
+        movement.x = vertical * speed * Time.deltaTime;
 
-        transform.Translate(new Vector3(x,y,0));
+        transform.Translate(new Vector3(movement.x, movement.y, 0));
+
+        animator.SetFloat("Horizontal",movement.y);
+        animator.SetFloat("Vertical", movement.x);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+
     }
     public void OnMove(InputValue inputValue)
     {
