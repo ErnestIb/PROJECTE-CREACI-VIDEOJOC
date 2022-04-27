@@ -41,18 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Esbos
-    uniqueID: 3764401477
+  - name: Layer 1
+    uniqueID: 2425651459
     locked: 0
-  - name: Base
-    uniqueID: 872985443
+  - name: Layer 2
+    uniqueID: 4250941897
     locked: 0
-  - name: Neu
-    uniqueID: 2757503523
-    locked: 0
-  - name: Riu
-    uniqueID: 3322953409
-    locked: 0
-  - name: Arbres
-    uniqueID: 1966227791
+  - name: Layer 3
+    uniqueID: 4189426099
     locked: 0
