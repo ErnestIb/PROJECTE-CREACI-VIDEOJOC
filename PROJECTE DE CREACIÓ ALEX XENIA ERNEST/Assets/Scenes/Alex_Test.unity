@@ -17209,8 +17209,6 @@ GameObject:
   - component: {fileID: 1001624282}
   - component: {fileID: 1001624281}
   - component: {fileID: 1001624280}
-  - component: {fileID: 1001624283}
-  - component: {fileID: 1001624284}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -17296,12 +17294,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001624279}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 0.35, y: -0.01, z: 0}
+=======
+  m_LocalPosition: {x: -4.69, y: 0.95, z: 0}
+>>>>>>> parent of 6f604a1 (Changes)
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &1001624283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17353,6 +17356,8 @@ MonoBehaviour:
   m_DefaultActionMap: BasePlayerMap
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+=======
+>>>>>>> parent of 6f604a1 (Changes)
 --- !u!1 &1250511583
 GameObject:
   m_ObjectHideFlags: 0
@@ -17364,7 +17369,10 @@ GameObject:
   - component: {fileID: 1250511586}
   - component: {fileID: 1250511585}
   - component: {fileID: 1250511584}
+<<<<<<< HEAD
   - component: {fileID: 1250511587}
+=======
+>>>>>>> parent of 6f604a1 (Changes)
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -17431,12 +17439,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250511583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.07, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: -100}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &1250511587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17452,6 +17461,8 @@ MonoBehaviour:
   Target: {fileID: 1001624282}
   Offset: {x: 0, y: 0, z: -10}
   Smoothing: 5
+=======
+>>>>>>> parent of 6f604a1 (Changes)
 --- !u!1 &1945007950
 GameObject:
   m_ObjectHideFlags: 0
