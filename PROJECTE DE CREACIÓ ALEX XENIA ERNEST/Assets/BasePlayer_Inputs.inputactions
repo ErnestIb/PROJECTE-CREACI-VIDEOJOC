@@ -13,15 +13,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "dash",
-                    "type": "Button",
-                    "id": "63341de9-5855-48c9-9697-f5740e28af9c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "MultiTap",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -145,50 +136,6 @@
                     "action": "move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "9e292c8f-3e7a-4e50-91f2-2b50c1dc8a92",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "96d71222-3491-4b5d-91c5-dfd8a8c6ea9b",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f892eddc-0fe5-4e32-8f80-15e419f9ebf5",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3389e197-2816-48bc-b2e7-1da9bd6b5ef3",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }
