@@ -56,3 +56,6 @@ TagManager:
   - name: Arbres
     uniqueID: 1966227791
     locked: 0
+  - name: Personatge
+    uniqueID: 2999759967
+    locked: 0
