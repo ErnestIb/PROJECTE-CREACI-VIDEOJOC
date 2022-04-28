@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class WoodDisappear : MonoBehaviour
 {
+
+    public float disappearTime = 2f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        disappearTime -= Time.deltaTime;
+
+        if (disappearTime <= 0)
+        {
+            gameObject.active = false;
+        }
     }
 }

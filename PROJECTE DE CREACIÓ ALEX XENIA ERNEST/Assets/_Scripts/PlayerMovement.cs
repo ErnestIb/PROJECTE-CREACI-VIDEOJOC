@@ -6,45 +6,70 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Rigidbody2D rb;    
+
     // Start is called before the first frame update
     public float speed = 1f;
-    public float dashSpeed = 100f;
-    private float lastDashTime = 4f;
+    public float activeSpeed;
 
-    public float dashDuration = 1f;
-    public float originalDashDuration = 1f;
+    //for the dash
+    public float dashSpeed = 10f;
 
+    public float dashCooldown = 1f;
+    public float dashLength = .5f;
+
+    public float dashCounter = -1, dashCoolCounter = -1;
+    
+    //for the movement
     public float horizontal;
     public float vertical;
 
-    public float dashCooldown = 2f;
 
     public Animator animator;
     Vector2 movement;
 
     public GameObject dashEffect;
+    public GameObject tree;
+    public float disappearTime = 1f;
 
     void Start()
     {
-        
+        activeSpeed = speed;
+        rb = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Move();
+        Move(movement);
     }
 
-    private void Move()
+    private void Move(Vector2 direction)
     {
-        movement.y = horizontal * speed * Time.deltaTime;
-        movement.x = vertical * speed * Time.deltaTime;
+        movement.y = horizontal;
+        movement.x = vertical;
 
-        transform.Translate(new Vector3(movement.x, movement.y, 0));
+        rb.MovePosition((Vector2)transform.position + (direction * activeSpeed * Time.deltaTime));
 
         animator.SetFloat("Horizontal",movement.y);
         animator.SetFloat("Vertical", movement.x);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+
+            if (dashCounter <= 0)
+            {
+                activeSpeed = speed;
+                dashCoolCounter = dashCooldown;
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
     }
 
 
@@ -58,28 +83,19 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnDash()
     {
+        Debug.Log("tried to dash!");
 
-
-
-
-        float sinceLastDash = Time.time - lastDashTime;
-
-        if (sinceLastDash >= dashCooldown)
+        if (dashCounter <= 0 && dashCoolCounter <= 0)  
         {
             Instantiate(dashEffect, transform.position, Quaternion.identity);
-            transform.Translate(new Vector3(movement.x * dashSpeed, movement.y * dashSpeed, 0));
+            Instantiate(tree, transform.position, Quaternion.identity);
+            
+            
 
-            // conseguir la direccion del jugador
-
-            // temporizador del dash??
-
-            //
+            Debug.Log("Dashed");
+            activeSpeed = dashSpeed;
+            dashCounter = dashLength;
         }
-        else
-        {
-            Debug.Log("On dashCooldown!");
-        }
-        lastDashTime = Time.time;
 
     }
 }
