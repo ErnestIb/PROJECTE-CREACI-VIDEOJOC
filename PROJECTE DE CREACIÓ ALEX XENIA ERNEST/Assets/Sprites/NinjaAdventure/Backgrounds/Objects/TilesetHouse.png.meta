@@ -1368,7 +1368,7 @@ TextureImporter:
       name: TilesetHouse_23
       rect:
         serializedVersion: 2
-        x: 368
+        x: 414
         y: 320
         width: 48
         height: 48
@@ -1838,7 +1838,19 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8.623994, y: 24}
+        - {x: -18, y: 18}
+        - {x: -24, y: 10}
+        - {x: -24, y: -9}
+        - {x: -12, y: -18}
+        - {x: -12, y: -23}
+        - {x: 12, y: -23}
+        - {x: 12, y: -18}
+        - {x: 24, y: -9}
+        - {x: 24, y: 10}
+        - {x: 18, y: 18}
+        - {x: 9, y: 24}
       tessellationDetail: 0
       bones: []
       spriteID: 3f74c4f0c8c947ed0800000000000000
@@ -1859,7 +1871,19 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -9, y: 24}
+        - {x: -14, y: 22}
+        - {x: -18, y: 14}
+        - {x: -18, y: -12}
+        - {x: -12, y: -16}
+        - {x: -12, y: -23}
+        - {x: 12, y: -23}
+        - {x: 12, y: -16}
+        - {x: 18, y: -12}
+        - {x: 18, y: 14}
+        - {x: 15, y: 21}
+        - {x: 9, y: 24}
       tessellationDetail: 0
       bones: []
       spriteID: f1a55bba6c7574100800000000000000
@@ -1880,8 +1904,21 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
-      tessellationDetail: 0
+      physicsShape:
+      - - {x: 23.5, y: -16}
+        - {x: 23.5, y: 18}
+        - {x: 19.5, y: 24}
+        - {x: -18.5, y: 24}
+        - {x: -21.5, y: 21}
+        - {x: -23.5, y: 17}
+        - {x: -23.5, y: -16}
+        - {x: -11.5, y: -16}
+        - {x: -11.5, y: -22}
+        - {x: -10.5, y: -23}
+        - {x: 11.5, y: -23}
+        - {x: 12.5, y: -23}
+        - {x: 12.5, y: -16}
+      tessellationDetail: 1
       bones: []
       spriteID: 544979b3d048a42b0800000000000000
       internalID: -5599517994312559547
@@ -2474,7 +2511,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: -5}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: -5}
       tessellationDetail: 0
       bones: []
       spriteID: 64959d985dfcb13f0800000000000000
