@@ -1280,6 +1280,18 @@ TextureImporter:
   - first:
       213: -944273226044349850
     second: TilesetHouse_564
+  - first:
+      213: -3278226434802068603
+    second: TilesetHouse_0
+  - first:
+      213: -4860273865661983898
+    second: TilesetHouse_1
+  - first:
+      213: 2818596462216581815
+    second: TilesetHouse_2
+  - first:
+      213: 6631818491276816676
+    second: TilesetHouse_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1368,7 +1380,7 @@ TextureImporter:
       name: TilesetHouse_23
       rect:
         serializedVersion: 2
-        x: 414
+        x: 368
         y: 320
         width: 48
         height: 48
@@ -2249,14 +2261,14 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: 12, y: -8.5}
-        - {x: -12, y: -8.5}
-        - {x: -16, y: -10.5}
+      - - {x: 12, y: -6.5}
+        - {x: -12, y: -6.5}
+        - {x: -16, y: -8.5}
         - {x: -16, y: -21.5}
         - {x: -12, y: -24.5}
         - {x: 12, y: -24.5}
         - {x: 16, y: -21.5}
-        - {x: 16, y: -10.5}
+        - {x: 16, y: -8.5}
       tessellationDetail: 0
       bones: []
       spriteID: 414fe74ce640196f0800000000000000
@@ -2333,9 +2345,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 16
+        y: 18
         width: 48
-        height: 48
+        height: 46
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2433,7 +2445,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: -8}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: -8}
       tessellationDetail: 0
       bones: []
       spriteID: 67e5d50d841e20010800000000000000
@@ -2511,6 +2527,90 @@ TextureImporter:
       bones: []
       spriteID: 64959d985dfcb13f0800000000000000
       internalID: -928920382074169018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetHouse_0
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 304
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583d3542d666182d0800000000000000
+      internalID: -3278226434802068603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetHouse_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 304
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6635a168ba6dc8cb0800000000000000
+      internalID: -4860273865661983898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetHouse_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2979f7c8aad1720800000000000000
+      internalID: 2818596462216581815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetHouse_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 421fb6be7c3f80c50800000000000000
+      internalID: 6631818491276816676
       vertices: []
       indices: 
       edges: []

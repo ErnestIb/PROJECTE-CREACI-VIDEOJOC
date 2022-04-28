@@ -50,6 +50,9 @@ TagManager:
   - name: Riu
     uniqueID: 649012939
     locked: 0
+  - name: Plataforma inici
+    uniqueID: 3019982651
+    locked: 0
   - name: Escenari
     uniqueID: 496434575
     locked: 0
