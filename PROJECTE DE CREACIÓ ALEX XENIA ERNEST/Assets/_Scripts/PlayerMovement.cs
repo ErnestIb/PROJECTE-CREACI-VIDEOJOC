@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed = 100f;
     private float lastDashTime = 4f;
 
+    public float dashDuration = 1f;
+    public float originalDashDuration = 1f;
+
     public float horizontal;
     public float vertical;
 
@@ -55,12 +58,22 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnDash()
     {
+
+
+
+
         float sinceLastDash = Time.time - lastDashTime;
 
-        if(sinceLastDash >= dashCooldown)
+        if (sinceLastDash >= dashCooldown)
         {
             Instantiate(dashEffect, transform.position, Quaternion.identity);
             transform.Translate(new Vector3(movement.x * dashSpeed, movement.y * dashSpeed, 0));
+
+            // conseguir la direccion del jugador
+
+            // temporizador del dash??
+
+            //
         }
         else
         {
