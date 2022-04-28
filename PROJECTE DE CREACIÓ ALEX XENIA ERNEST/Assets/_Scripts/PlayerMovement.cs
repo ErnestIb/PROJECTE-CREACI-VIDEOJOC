@@ -88,9 +88,9 @@ public class PlayerMovement : MonoBehaviour
         if (dashCounter <= 0 && dashCoolCounter <= 0)  
         {
             Instantiate(dashEffect, transform.position, Quaternion.identity);
-            Instantiate(tree, transform.position, Quaternion.identity);
-            
-            
+            //Instantiate(tree, transform.position, Quaternion.identity);
+
+
 
             Debug.Log("Dashed");
             activeSpeed = dashSpeed;
