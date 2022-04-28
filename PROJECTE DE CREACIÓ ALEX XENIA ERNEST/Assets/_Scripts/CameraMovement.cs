@@ -19,17 +19,17 @@ public class CameraMovement : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                //dragOrigin = cam.ScreenToWorldPoint(Input.mousePosition);
+                dragOrigin = cam.ScreenToWorldPoint(Input.mousePosition);
 
             }
 
             if (Input.GetMouseButton(0))
             {
-                //Vector3 difference = dragOrigin - cam.ScreenToWorldPoint(Input.mousePosition);
+                Vector3 difference = dragOrigin - cam.ScreenToWorldPoint(Input.mousePosition);
 
-                //print("origin " + dragOrigin + " new position " + cam.ScreenToWorldPoint(Input.mousePosition) + " =difference" + difference);
+                print("origin " + dragOrigin + " new position " + cam.ScreenToWorldPoint(Input.mousePosition) + " =difference" + difference);
 
-                //cam.transform.position += difference;
+                cam.transform.position += difference;
             }
         }
         
