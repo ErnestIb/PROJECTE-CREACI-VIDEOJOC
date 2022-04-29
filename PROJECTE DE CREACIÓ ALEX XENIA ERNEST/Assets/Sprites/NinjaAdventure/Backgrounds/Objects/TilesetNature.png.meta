@@ -391,7 +391,14 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: 3.5}
+        - {x: -8, y: -5.5}
+        - {x: -5, y: -7.5}
+        - {x: 0, y: -7.5}
+        - {x: 2, y: -6.5}
+        - {x: 8, y: -6.5}
+        - {x: 8, y: 3.5}
       tessellationDetail: 0
       bones: []
       spriteID: 110d96308ef6a1ff0800000000000000
@@ -976,9 +983,7 @@ TextureImporter:
         - {x: -8, y: 1.5}
         - {x: -16, y: -1.5}
         - {x: -16, y: -11.5}
-        - {x: -10, y: -15.5}
-        - {x: 10, y: -15.5}
-        - {x: 16, y: -10.5}
+        - {x: 16, y: -11.5}
         - {x: 16, y: -1.5}
       tessellationDetail: 1
       bones: []
@@ -1013,6 +1018,75 @@ TextureImporter:
       bones: []
       spriteID: 677b6b7ccea44ce40800000000000000
       internalID: 5675743811217045366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10345fce99786b2e0800000000000000
+      internalID: -2110350280201256191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_23
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ea47747af840b80800000000000000
+      internalID: -8429454653909586362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -6, y: 5}
+        - {x: -8, y: 4}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 4}
+        - {x: 6, y: 5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31d333e8c33c658b0800000000000000
+      internalID: -5163725257882518253
       vertices: []
       indices: 
       edges: []
