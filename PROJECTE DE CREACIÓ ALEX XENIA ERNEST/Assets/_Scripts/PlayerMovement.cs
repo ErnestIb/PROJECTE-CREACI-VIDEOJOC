@@ -32,10 +32,14 @@ public class PlayerMovement : MonoBehaviour
     public GameObject tree;
     public float disappearTime = 1f;
 
+    Shake_Camera camerashake;
+
     void Start()
     {
         activeSpeed = speed;
         rb = this.GetComponent<Rigidbody2D>();
+        camerashake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake_Camera>();
+
     }
 
     // Update is called once per frame
@@ -46,6 +50,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
+
+        //basic movement
+
         movement.y = horizontal;
         movement.x = vertical;
 
@@ -88,9 +95,10 @@ public class PlayerMovement : MonoBehaviour
         if (dashCounter <= 0 && dashCoolCounter <= 0)  
         {
             Instantiate(dashEffect, transform.position, Quaternion.identity);
-            Instantiate(tree, transform.position, Quaternion.identity);
-            
-            
+            //Instantiate(tree, transform.position, Quaternion.identity);
+            camerashake.Shake();
+
+
 
             Debug.Log("Dashed");
             activeSpeed = dashSpeed;

@@ -53,6 +53,9 @@ TagManager:
   - name: Plataforma inici
     uniqueID: 3019982651
     locked: 0
+  - name: Player
+    uniqueID: 3351228729
+    locked: 0
   - name: Escenari
     uniqueID: 496434575
     locked: 0
