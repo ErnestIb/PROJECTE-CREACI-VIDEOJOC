@@ -17,6 +17,7 @@ public class PanAndZoom : MonoBehaviour
     private CinemachineVirtualCamera virtualCamera;
     private Transform cameraTransform;
     private InputAction detectLeftShiftKey;
+    
 
     private void Awake()
     {
@@ -43,6 +44,7 @@ public class PanAndZoom : MonoBehaviour
         float z = inputProvider.GetAxisValue(2);
         if (detectLeftShiftKey.ReadValue<float>() != 0)
         {
+            
             if (x != 0 || y != 0)
             {
                 PanScreen(x, y);
@@ -52,6 +54,7 @@ public class PanAndZoom : MonoBehaviour
                 ZoomScreen(z);
             }
         }
+        
         
     }
 
