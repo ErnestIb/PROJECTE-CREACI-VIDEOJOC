@@ -50,6 +50,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
+
+        //basic movement
+
         movement.y = horizontal;
         movement.x = vertical;
 
