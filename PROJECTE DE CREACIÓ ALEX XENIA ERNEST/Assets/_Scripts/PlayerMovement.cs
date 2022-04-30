@@ -6,45 +6,104 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Rigidbody2D rb;    
+
     // Start is called before the first frame update
     public float speed = 1f;
+    public float activeSpeed;
+
+    //for the dash
+    public float dashSpeed = 10f;
+
+    public float dashCooldown = 1f;
+    public float dashLength = .5f;
+
+    public float dashCounter = -1, dashCoolCounter = -1;
+    
+    //for the movement
     public float horizontal;
     public float vertical;
+
 
     public Animator animator;
     Vector2 movement;
 
+    public GameObject dashEffect;
+    public GameObject tree;
+    public float disappearTime = 1f;
+
+    Shake_Camera camerashake;
+
     void Start()
     {
-        
+        activeSpeed = speed;
+        rb = this.GetComponent<Rigidbody2D>();
+        camerashake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake_Camera>();
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Move();
+        Move(movement);
     }
 
-    private void Move()
+    private void Move(Vector2 direction)
     {
-        movement.y = horizontal * speed * Time.deltaTime;
-        movement.x = vertical * speed * Time.deltaTime;
 
-        transform.Translate(new Vector3(movement.x, movement.y, 0));
+        //basic movement
+
+        movement.y = horizontal;
+        movement.x = vertical;
+
+        rb.MovePosition((Vector2)transform.position + (direction * activeSpeed * Time.deltaTime));
 
         animator.SetFloat("Horizontal",movement.y);
         animator.SetFloat("Vertical", movement.x);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
 
+            if (dashCounter <= 0)
+            {
+                activeSpeed = speed;
+                dashCoolCounter = dashCooldown;
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
     }
+
+
     public void OnMove(InputValue inputValue)
     {
         var move2d = inputValue.Get<Vector2>();
         horizontal = move2d.y;
         vertical = move2d.x;
 
+    }
 
-        Debug.Log("OnMove");
+    public void OnDash()
+    {
+        Debug.Log("tried to dash!");
+
+        if (dashCounter <= 0 && dashCoolCounter <= 0)  
+        {
+            Instantiate(dashEffect, transform.position, Quaternion.identity);
+            //Instantiate(tree, transform.position, Quaternion.identity);
+            camerashake.Shake();
+
+
+
+            Debug.Log("Dashed");
+            activeSpeed = dashSpeed;
+            dashCounter = dashLength;
+        }
+
     }
 }
