@@ -3,7 +3,10 @@ guid: 0927a5aa04239da4b901391b6c253a9b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - animator: {instanceID: 0}
+  - dashEffect: {fileID: 7531504199244669416, guid: 02bf118ee20ad0240bacda36751452ca,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
