@@ -41,24 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Esbos
+    uniqueID: 3764401477
+    locked: 0
   - name: Base
     uniqueID: 872985443
     locked: 0
   - name: Neu
-    uniqueID: 3035013375
+    uniqueID: 2757503523
     locked: 0
   - name: Riu
-    uniqueID: 649012939
+    uniqueID: 3322953409
     locked: 0
-  - name: Plataforma inici
-    uniqueID: 3019982651
-    locked: 0
-  - name: Player
-    uniqueID: 3351228729
-    locked: 0
-  - name: Escenari
-    uniqueID: 496434575
-    locked: 0
-  - name: Adornos
-    uniqueID: 2838196145
+  - name: Arbres
+    uniqueID: 1966227791
     locked: 0
