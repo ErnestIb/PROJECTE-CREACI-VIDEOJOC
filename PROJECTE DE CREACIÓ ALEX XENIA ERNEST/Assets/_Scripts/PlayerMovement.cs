@@ -32,13 +32,11 @@ public class PlayerMovement : MonoBehaviour
     public GameObject tree;
     public float disappearTime = 1f;
 
-    Shake_Camera camerashake;
 
     void Start()
     {
         activeSpeed = speed;
         rb = this.GetComponent<Rigidbody2D>();
-        camerashake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shake_Camera>();
 
     }
 
@@ -96,7 +94,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Instantiate(dashEffect, transform.position, Quaternion.identity);
             //Instantiate(tree, transform.position, Quaternion.identity);
-            camerashake.Shake();
 
 
 
