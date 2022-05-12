@@ -2,8 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Firedamage : MonoBehaviour
+public class UllEnemicDamage : MonoBehaviour   
 {
+
+    public float damage;
+
+    public float MakeDamage()
+    {
+        return damage;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
