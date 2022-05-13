@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     public float horizontal;
     public float vertical;
 
+   
+
 
     public Animator animator;
     Vector2 movement;
@@ -103,4 +105,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
+   
 }
