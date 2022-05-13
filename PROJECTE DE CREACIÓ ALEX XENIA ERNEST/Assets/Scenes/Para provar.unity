@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fae6371227974304e870acfad3f10ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 20
+  Speed: 100
 --- !u!4 &321603915 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1504723762284180453, guid: d00abaf94c61a314ebfeb0931a1f0074,
@@ -1938,7 +1938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fae6371227974304e870acfad3f10ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 20
+  Speed: 100
 --- !u!4 &646051785
 Transform:
   m_ObjectHideFlags: 0
@@ -31815,7 +31815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fae6371227974304e870acfad3f10ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 20
+  Speed: 100
 --- !u!1 &1659597561 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2962933261364294269, guid: bdf735c322ae89542abd004612923cd2,
@@ -31857,7 +31857,7 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.2454834}
       - {x: -0.5, y: -0.5}
       - {x: 0.44312286, y: -0.5}
-      - {x: 0.5, y: -0.2577381}
+      - {x: 0.44358826, y: -0.2577381}
       - {x: 0.28331757, y: -0.1037302}
 --- !u!1001 &1668358112
 PrefabInstance:
