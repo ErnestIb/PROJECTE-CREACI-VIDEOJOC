@@ -6,7 +6,14 @@ public class UllEnemic : MonoBehaviour//, ITakeDamage
 {
     public float Speed = 5f;
 
-    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var damageTaker = other.GetComponent<ITakeDamage>(); // Cambiar per el tag
+        if(damageTaker != null)
+        {
+            damageTaker.TakeDamage(5.0f);
+        }
+    }
 
 
     // Start is called before the first frame update
