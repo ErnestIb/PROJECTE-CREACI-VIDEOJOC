@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UllEnemic : MonoBehaviour//, ITakeDamage
+public class UllEnemic : MonoBehaviour
 {
     public float Speed = 5f;
+    public float damage = 5;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var damageTaker = other.GetComponent<ITakeDamage>(); // Cambiar per el tag
-        if(damageTaker != null)
+        var damageTaker = other.GetComponent<ITakeDamage>();
+        if(other.CompareTag("Player"))
         {
-            damageTaker.TakeDamage(5.0f);
+            damageTaker.TakeDamage(damage);
         }
     }
 
