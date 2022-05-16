@@ -1,26 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class SlimeEnemic : MonoBehaviour, ITakeDamage
-{    
-    public float life = 50;
-    public float velocity = 2;
-    public float damage = 10;
-
+public class RacoonEnemic : MonoBehaviour
+{
     enum EPatrol
     {
         Start,
         Patrol,
-        Wait
+        Wait,
+        Follow,
+        Attack
     }
 
     FSM<EPatrol> brain;
 
 
 
-    [SerializeField]List<Transform> waypoints;
+    [SerializeField] List<Transform> waypoints;
 
     int nextWaypoint;
 
@@ -91,36 +88,5 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
     private void Update()
     {
         brain.Update();
-    }
-
-
-    //Colisions
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Bullet")
-    //    {
-            
-    //    }
-    //}
-
-    //Rebre mal
-    public void TakeDamage(float damage)
-    {
-        life -= damage;
-
-        if (life <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    //Fer mal
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        var damageTaker = other.GetComponent<ITakeDamage>();
-        if (other.CompareTag("Player") && damageTaker != null)
-        {
-            damageTaker.TakeDamage(damage);
-        }
     }
 }
