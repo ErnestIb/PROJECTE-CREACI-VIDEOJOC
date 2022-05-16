@@ -1,14 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class PowerUp : MonoBehaviour
+
+
+[Serializable]
+public class PowerUp
 {
-    public PowerUpEffect powerupEffect;
+    [SerializeField]
+    public string name;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField]
+    public float duration;
+
+    [SerializeField]
+    public UnityEvent startAction;
+
+    [SerializeField]
+    public UnityEvent endAction;
+
+    public void End()
     {
-        Destroy(gameObject);
-        powerupEffect.Apply(collision.gameObject);
+        if (endAction != null)
+            endAction.Invoke();
     }
+
+    public void Start()
+    {
+        if (startAction != null)
+            startAction.Invoke();
+    }
+
 }
