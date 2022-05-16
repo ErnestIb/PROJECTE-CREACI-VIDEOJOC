@@ -93,6 +93,16 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
         brain.Update();
     }
 
+
+    //Colisions
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            
+        }
+    }
+
     //Rebre mal
     public void TakeDamage(float damage)
     {
@@ -108,7 +118,7 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
     private void OnTriggerEnter2D(Collider2D other)
     {
         var damageTaker = other.GetComponent<ITakeDamage>();
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && damageTaker != null)
         {
             damageTaker.TakeDamage(damage);
         }
