@@ -12,10 +12,25 @@ public class PowerupController : MonoBehaviour
 
     private List<PowerUp> keys = new List<PowerUp>();
 
+    public int timer = 0;
+
     // Update is called once per frame
     void Update()
     {
         HandleActivePowerups();
+
+        
+        if(timer == 5000)
+        RandomSpawnPowerups();
+
+        timer++;
+    }
+
+    public void RandomSpawnPowerups()
+    {
+        SpawnPowerup(powerups[0],new Vector3(Random.Range(-123.0f, -65.0f), Random.Range(-14.0f, 20.0f), 0));
+
+        timer = 0;
     }
 
     public void HandleActivePowerups()
@@ -37,6 +52,7 @@ public class PowerupController : MonoBehaviour
                     activePowerups.Remove(powerup);
 
                     powerup.End();
+
                 }
             }
         }
