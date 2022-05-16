@@ -416,6 +416,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1504723762117889345}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &381703381 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1504940894, guid: bdf735c322ae89542abd004612923cd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1837102838}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &467929716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60633,6 +60639,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1630282887, guid: bdf735c322ae89542abd004612923cd2, type: 3}
+      propertyPath: _ArrowHandPos
+      value: 
+      objectReference: {fileID: 381703381}
     - target: {fileID: 2962933261364294269, guid: bdf735c322ae89542abd004612923cd2,
         type: 3}
       propertyPath: m_Name
@@ -60806,6 +60816,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 358015341}
     m_Modifications:
+    - target: {fileID: 2785912042357616230, guid: afe175a5041143b4ca1e0fa283d68300,
+        type: 3}
+      propertyPath: life
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2785912042357616230, guid: afe175a5041143b4ca1e0fa283d68300,
         type: 3}
       propertyPath: velocity

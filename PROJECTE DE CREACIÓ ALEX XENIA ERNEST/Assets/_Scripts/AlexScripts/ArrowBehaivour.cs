@@ -25,12 +25,12 @@ public class ArrowBehaivour : MonoBehaviour
     }
     float DamageCalculator()
     {
-        return _speed * _baseDamage;
+        return 10;
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var damageTaker = other.GetComponent<ITakeamage>();
+        var damageTaker = other.GetComponent<ITakeDamage>();
         if (damageTaker != null)
         {
             damageTaker.TakeDamage(DamageCalculator());
