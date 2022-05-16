@@ -2,24 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodDisappear : MonoBehaviour
+public class ParticleDestroyer : MonoBehaviour
 {
-
-    public float disappearTime = 2f;
-
     // Start is called before the first frame update
+
+    public float autodestroyTimer = 0.2f;
     void Start()
     {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        disappearTime -= Time.deltaTime;
-
-        if (disappearTime <= 0)
+        autodestroyTimer -= Time.deltaTime;
+        if (autodestroyTimer <= 0)
         {
-            gameObject.active = false;
+            Destroy(this.gameObject);
         }
     }
 }

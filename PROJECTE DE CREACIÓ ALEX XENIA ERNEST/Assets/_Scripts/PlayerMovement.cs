@@ -29,15 +29,15 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
 
     public GameObject dashEffect;
-    public GameObject tree;
     public float disappearTime = 1f;
 
+
+// Combat
 
     void Start()
     {
         activeSpeed = speed;
         rb = this.GetComponent<Rigidbody2D>();
-
     }
 
     // Update is called once per frame
@@ -45,6 +45,12 @@ public class PlayerMovement : MonoBehaviour
     {
         Move(movement);
     }
+
+    
+
+    //
+    // MOVEMENT
+    //
 
     private void Move(Vector2 direction)
     {
