@@ -6,7 +6,6 @@ public class ArrowBehaivour : MonoBehaviour
 {
     public GameObject _ArrowPrefab;
 
-    public float _baseDamage;
     private float _speed;
     private float _lifeTime = 4;
     private Vector2 direction;
@@ -25,7 +24,7 @@ public class ArrowBehaivour : MonoBehaviour
     }
     float DamageCalculator()
     {
-        return 10;
+        return _speed;
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -48,7 +47,6 @@ public class ArrowBehaivour : MonoBehaviour
     void Update()
     {
         DestroyOverTime();
-
     }
 
 
