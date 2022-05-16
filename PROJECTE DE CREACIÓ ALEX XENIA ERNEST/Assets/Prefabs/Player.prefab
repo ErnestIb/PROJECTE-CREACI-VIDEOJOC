@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 2989653568482880284}
   - component: {fileID: 1909794524497694982}
   - component: {fileID: 1630282887}
+  - component: {fileID: 1659597568}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -268,9 +269,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -943738567
-  m_SortingLayer: 5
-  m_SortingOrder: 2
+  m_SortingLayerID: 496434575
+  m_SortingLayer: 6
+  m_SortingOrder: 0
   m_Sprite: {fileID: 4035959289877228764, guid: 9c839690c63b2034988cd8930538ed44,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -361,7 +362,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2962933261364294269}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -412,10 +413,41 @@ MonoBehaviour:
   _ArrowPrefab: {fileID: 4078960529058784592, guid: da158e90c168a58478bbe7e31e24c0e2,
     type: 3}
   _ArrowHand: {fileID: 1504940893}
-  _ArrowHandPos: {fileID: 0}
+  _ArrowHandPos: {fileID: 1504940894}
   ArrowGFX: {fileID: 1504940895}
   _Bow: {fileID: 1895491979}
   BowGFX: {fileID: 1895491980}
   _materialArrow: {fileID: 2100000, guid: 50b3db5a397e5654b99e139580e3ddf9, type: 2}
   _ArrowParticle: {fileID: 2951286626079276018, guid: d768b3619b61a6b45837a4f6cdab4d30,
     type: 3}
+--- !u!60 &1659597568
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962933261364294269}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.3125, y: -0.1037302}
+      - {x: -0.5, y: -0.2454834}
+      - {x: -0.5, y: -0.5}
+      - {x: 0.44312286, y: -0.5}
+      - {x: 0.44358826, y: -0.2577381}
+      - {x: 0.28331757, y: -0.1037302}
