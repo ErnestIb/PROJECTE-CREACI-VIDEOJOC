@@ -42,7 +42,7 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
 
         if (CurrentHealth <= 0.0f && !Dead)
         {
-            Die();
+            FindObjectOfType<LevelManager>().Restart();
         }
 
         healthBar.SetHealth(CurrentHealth);
