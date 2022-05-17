@@ -20,14 +20,19 @@ public class PowerupActions : MonoBehaviour
         playerMovement.activeSpeed = playerMovement.speed;
     }
 
-    public void HealingStartAction()
+    public void HealingOnlyAction()
     {
-        //healthSystem.currentHealth += 30;
+       healthSystem.CurrentHealth += 30;
     }
 
-    public void HealingEndAction()
+    public void DashBuffStartAction()
     {
-        //healthSystem.currentHealth = healthSystem.currentHealth;
+        playerMovement.dashCooldown = 0;
+    }
+
+    public void DashBuffEndAction()
+    {
+        playerMovement.dashCooldown = 1;
     }
 
 }

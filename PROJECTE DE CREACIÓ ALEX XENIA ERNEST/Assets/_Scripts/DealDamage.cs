@@ -2,7 +2,7 @@
 
 public class DealDamage : MonoBehaviour
 {
-    public float Damage = 5.0f;
+    public int Damage = 5;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

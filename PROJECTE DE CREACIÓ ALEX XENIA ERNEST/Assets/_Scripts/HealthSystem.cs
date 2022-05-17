@@ -4,38 +4,37 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour, IDamageTaker
 {
+    
+
     public ImprovedHealthBar healthBar;
 
     [SerializeField]
-    private float maxHealth = 100.0f;
+    private int maxHealth = 100;
 
-    public float MaxHealth => maxHealth;
-    public float CurrentHealth { get; private set; }
+    public int MaxHealth => maxHealth;
+    public int CurrentHealth; //{ get; private set; }
 
     public bool Dead { get; private set; }
 
     public delegate void OnDeathDelegate();
     public OnDeathDelegate OnDeath;
 
-    public delegate void OnHitDelegate(float fraction);
+    public delegate void OnHitDelegate(int fraction);
     public OnHitDelegate OnHit;
 
-    void Update()
+    public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            CurrentHealth = -20;
-        }
+        TakeDamage(1);
     }
 
     protected virtual void Start()
     {
         CurrentHealth = maxHealth;
         Dead = false;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(MaxHealth);
     }
 
-    public virtual void TakeDamage(float amount)
+    public virtual void TakeDamage(int amount)
     {
         CurrentHealth -= amount;
 
@@ -53,5 +52,6 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
     {
         OnDeath?.Invoke();
         Dead = true;
+        
     }
 }
