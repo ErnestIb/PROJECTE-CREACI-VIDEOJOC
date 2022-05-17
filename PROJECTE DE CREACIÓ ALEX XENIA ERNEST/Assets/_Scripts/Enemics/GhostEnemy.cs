@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GhostEnemy : MonoBehaviour, ITakeDamage
 {
-    [SerializeField] private float life = 80;
-    [SerializeField] private float damage = 10;
+    [SerializeField] private float life;
+    [SerializeField] private float damage;
     enum EPatrol
     {
         Start,
@@ -16,13 +16,6 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
     }
 
     FSM<EPatrol> brain;
-
-    //Seguir y atacar al personaje
-    [SerializeField] private float life = 100;
-    [SerializeField] private float damage = 10;
-
-
-
 
     [SerializeField] List<Transform> waypoints;
 
