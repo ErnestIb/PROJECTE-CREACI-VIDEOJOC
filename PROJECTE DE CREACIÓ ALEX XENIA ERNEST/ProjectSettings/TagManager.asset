@@ -64,3 +64,6 @@ TagManager:
   - name: Adornos
     uniqueID: 2838196145
     locked: 0
+  - name: Fantasmas
+    uniqueID: 446758491
+    locked: 0

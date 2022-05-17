@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RacoonEnemic : MonoBehaviour, ITakeDamage
-{   
+public class GhostEnemy : MonoBehaviour, ITakeDamage
+{
+    [SerializeField] private float life = 80;
+    [SerializeField] private float damage = 10;
     enum EPatrol
     {
         Start,
@@ -18,7 +20,7 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
     //Seguir y atacar al personaje
     [SerializeField] private float life = 100;
     [SerializeField] private float damage = 10;
-    
+
 
 
 
@@ -62,7 +64,7 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         brain.SetOnExit(EPatrol.Patrol, () => ++nextWaypoint);
         brain.SetOnEnter(EPatrol.Patrol, () =>
         {
-            animator.SetBool("isPatroling", true);          
+            animator.SetBool("isPatroling", true);
         });
 
         // Wait
@@ -109,7 +111,7 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         {
             brain.ChangeState(EPatrol.Follow);
         }
-        
+
     }
 
     void WaitUpdate()
@@ -129,10 +131,10 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
             return;
         }
         if (IsPlayerNear(followDistance))
-        {          
-            brain.ChangeState(EPatrol.Follow);                      
+        {
+            brain.ChangeState(EPatrol.Follow);
         }
-       
+
     }
 
     private bool IsPlayerNear(float distance)
@@ -160,7 +162,7 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
     void AttackUpdate()
     {
-        
+
 
         Punch();
 
@@ -187,7 +189,6 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         brain.Update();
     }
 
-    //Rebre mal
     public void TakeDamage(float damage)
     {
         life -= damage;
