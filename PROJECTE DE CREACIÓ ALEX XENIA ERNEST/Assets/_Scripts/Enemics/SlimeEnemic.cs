@@ -74,7 +74,7 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
     {
         counterTimer += Time.deltaTime;
 
-        if (counterTimer > 2.0f)
+        if (counterTimer > 3.0f)
         {
             if (nextWaypoint >= waypoints.Count)
             {

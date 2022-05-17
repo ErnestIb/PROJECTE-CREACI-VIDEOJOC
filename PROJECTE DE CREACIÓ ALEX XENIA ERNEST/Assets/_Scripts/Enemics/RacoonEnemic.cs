@@ -35,11 +35,7 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
     Transform player;
     Vector3 direction;
 
-    [SerializeField] private float punchRange;
-    [SerializeField] private float punchDamage;
-    [SerializeField] private Transform punchController;
-
-
+    
     Animator animator;
 
     private void Start()
@@ -87,6 +83,7 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         brain.SetOnEnter(EPatrol.Attack, () =>
         {
             animator.SetBool("isAttacking", true);
+            counterTimer = 0.0f;
         });
         brain.SetOnExit(EPatrol.Attack, () =>
         {
@@ -173,11 +170,18 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
     void Punch()
     {
-        var damageTaker = player.GetComponent<ITakeDamage>();
-        if (damageTaker != null)
+        counterTimer += Time.deltaTime;
+
+        if (counterTimer > 0.5f)
         {
-            damageTaker.TakeDamage(damage);
+            var damageTaker = player.GetComponent<ITakeDamage>();
+            if (damageTaker != null)
+            {
+                damageTaker.TakeDamage(damage);
+            }
         }
+
+            
     }
 
 
