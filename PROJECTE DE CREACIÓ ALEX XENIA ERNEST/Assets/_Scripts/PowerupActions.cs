@@ -35,4 +35,9 @@ public class PowerupActions : MonoBehaviour
         playerMovement.dashCooldown = 1;
     }
 
+    public void ShieldOnlyAction()
+    {
+        healthSystem.currentShield += 30;
+    }
+
 }

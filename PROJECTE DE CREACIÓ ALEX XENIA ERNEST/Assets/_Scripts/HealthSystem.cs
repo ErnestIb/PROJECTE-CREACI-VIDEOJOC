@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour, IDamageTaker
 {
-    
+    public ShieldBar shieldBar;
 
     public ImprovedHealthBar healthBar;
 
@@ -29,14 +29,16 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
 
     public void Update()
     {
-        TakeDamage(1);
+        //TakeDamage(1);
     }
 
     protected virtual void Start()
     {
+        currentShield = maxShield;
         CurrentHealth = maxHealth;
         Dead = false;
         healthBar.SetMaxHealth(MaxHealth);
+        shieldBar.SetMaxShield(maxShield);
     }
 
     public virtual void TakeDamage(int amount)
@@ -67,9 +69,10 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
                 FindObjectOfType<LevelManager>().Restart();
             }
         }
-        
 
+        
         healthBar.SetHealth(CurrentHealth);
+        shieldBar.SetShield(currentShield);
     }
 
     protected virtual void Die()
