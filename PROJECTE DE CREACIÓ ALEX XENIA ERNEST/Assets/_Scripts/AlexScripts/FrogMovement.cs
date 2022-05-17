@@ -117,13 +117,14 @@ public class FrogMovement : MonoBehaviour
         if(_canFire)
         {
             Debug.Log("Fired!");
-            float angle = Utility.AngleTowardsMouse(_firePoint.position);
+            float angle = Utility.AngleTowardsMouse(new Vector3(_firePoint.position.x,_firePoint.position.y,_firePoint.position.z));
             Quaternion blastRotation = Quaternion.Euler(new Vector3(0,0,angle));
 
-            var blast = Instantiate(_chargedBlast, _firePoint.position,blastRotation);
+            var blast = Instantiate(_chargedBlast, _firePoint.position,_firePoint.rotation);
             blast.Init(_speed,_damage);
             
         }
+        _canFire = false;
     }
 
     
