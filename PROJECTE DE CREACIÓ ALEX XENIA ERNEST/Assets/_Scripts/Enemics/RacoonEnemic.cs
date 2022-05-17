@@ -31,7 +31,9 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
     float counterTimer;
 
-    
+    public float followDistance;
+    public float noFollowMore;
+    public float stopNearPlayer;
     public float speedRun;
     Transform player;
     Vector3 direction;
@@ -84,10 +86,14 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         });
 
         //Attack
-        brain.SetOnStay(EPatrol.Attack, FollowUpdate);
+        brain.SetOnStay(EPatrol.Attack, AttackUpdate);
         brain.SetOnEnter(EPatrol.Attack, () =>
         {
             animator.SetBool("isAttacking", true);
+        });
+        brain.SetOnExit(EPatrol.Attack, () =>
+        {
+            animator.SetBool("isAttacking", false);
         });
 
     }
@@ -102,14 +108,11 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
             brain.ChangeState(EPatrol.Wait);
             return;
         }
-        if (IsPlayerNear(5))
+        if (IsPlayerNear(followDistance))
         {
             brain.ChangeState(EPatrol.Follow);
         }
-        if (IsPlayerNear(2))
-        {
-            brain.ChangeState(EPatrol.Wait);
-        }
+        
     }
 
     void WaitUpdate()
@@ -128,17 +131,14 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
             brain.ChangeState(EPatrol.Patrol);
             return;
         }
-        if (IsPlayerNear(5))
+        if (IsPlayerNear(followDistance))
         {          
             brain.ChangeState(EPatrol.Follow);                      
         }
-        if (IsPlayerNear(2))
-        {
-            brain.ChangeState(EPatrol.Attack);
-        }
+       
     }
 
-    private bool IsPlayerNear(int distance)
+    private bool IsPlayerNear(float distance)
     {
         return (Vector2.Distance(transform.position, player.position) < distance);
     }
@@ -146,13 +146,14 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
     void FollowUpdate()
     {
         //mirar si encara esta prou a prop
-        if (!IsPlayerNear(6))
+        if (!IsPlayerNear(noFollowMore))
         {
             brain.ChangeState(EPatrol.Wait);
         }
-        if (IsPlayerNear(2))
+        if (IsPlayerNear(stopNearPlayer))
         {
             brain.ChangeState(EPatrol.Attack);
+
         }
 
         //el que ha de fer
@@ -165,19 +166,18 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         
 
         Punch();
-        
-        
+
+        if (!IsPlayerNear(stopNearPlayer))
+        {
+            brain.ChangeState(EPatrol.Wait);
+
+        }
     }
 
     void Punch()
     {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        var damageTaker = other.GetComponent<ITakeDamage>();
-        if (other.CompareTag("Player") && damageTaker != null)
+        var damageTaker = player.GetComponent<ITakeDamage>();
+        if (damageTaker != null)
         {
             damageTaker.TakeDamage(damage);
         }
