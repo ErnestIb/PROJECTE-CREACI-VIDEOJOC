@@ -11,8 +11,13 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
     [SerializeField]
     private int maxHealth = 100;
 
+    [SerializeField]
+    private int maxShield = 100;
+
+    public int currentShield;
+
     public int MaxHealth => maxHealth;
-    public int CurrentHealth; //{ get; private set; }
+    public int CurrentHealth; 
 
     public bool Dead { get; private set; }
 
@@ -36,14 +41,33 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
 
     public virtual void TakeDamage(int amount)
     {
-        CurrentHealth -= amount;
-
-        OnHit?.Invoke(CurrentHealth / MaxHealth);
-
-        if (CurrentHealth <= 0.0f && !Dead)
+        if (currentShield > 0)
         {
-            FindObjectOfType<LevelManager>().Restart();
+            if (currentShield - amount < 0)
+            {
+                int amountHealth = 0;
+                amountHealth = amount - currentShield;
+                currentShield -= amount;
+                CurrentHealth -= amountHealth;
+            }
+            else
+            {
+                currentShield -= amount;
+            }
+            
+            
+        } else
+        {
+            CurrentHealth -= amount;
+
+            OnHit?.Invoke(CurrentHealth / MaxHealth);
+
+            if (CurrentHealth <= 0.0f && !Dead)
+            {
+                FindObjectOfType<LevelManager>().Restart();
+            }
         }
+        
 
         healthBar.SetHealth(CurrentHealth);
     }
