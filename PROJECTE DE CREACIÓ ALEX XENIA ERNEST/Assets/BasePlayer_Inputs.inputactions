@@ -180,15 +180,6 @@
                     "processors": "Normalize(min=-1,max=1),Invert",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "fire",
-                    "type": "Button",
-                    "id": "5f4980bf-21ad-4daf-b5a8-ab543f9d4acb",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -211,17 +202,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Zoom",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "22136168-39c3-420b-b29c-a77f82ea1dab",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
