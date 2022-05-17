@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemy
-  - Bullet
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -27,9 +25,9 @@ TagManager:
   - 
   - 
   - 
-  - Layer 1
-  - Layer 2
-  - Layer 3
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -42,25 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Base
-    uniqueID: 872985443
-    locked: 0
-  - name: Neu
-    uniqueID: 3035013375
-    locked: 0
-  - name: Riu
-    uniqueID: 649012939
-    locked: 0
-  - name: Plataforma inici
-    uniqueID: 3019982651
-    locked: 0
-  - name: Player
-    uniqueID: 3351228729
-    locked: 0
-  - name: Escenari
-    uniqueID: 496434575
-    locked: 0
-  - name: Adornos
-    uniqueID: 2838196145
     locked: 0

@@ -15,14 +15,16 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] SpriteRenderer BowGFX;
     [SerializeField] Material _materialArrow;
     [SerializeField] GameObject _ArrowParticle;
-    // [SerializeField] der _Powerder;
 
     private float _BowCharge;
     private float _MaxBowCharge = 20;
     private float _BaseBowPower = 4;
+    private float _MaxDamage;
     float _Damage;
     float _ChargeColor;
     bool _ParticleFired;
+    float _lastFireTime;
+    float _fireCooldown = 0.5f;
 
     public void Start()
     {
@@ -32,11 +34,13 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         RotateBow();
-        BowInput();
-
+        if(CanFire())BowInput();
     }
 
-    
+    bool CanFire()
+    {
+     return (_lastFireTime + _fireCooldown) < Time.time;
+    }
 
     void BowInput()
     {
@@ -92,8 +96,7 @@ public class PlayerAttack : MonoBehaviour
         ArrowGFX.enabled = false;
         ArrowGFX.color = Color.white;
         _ParticleFired = false;
-
-
+        _lastFireTime = Time.time;
         _BowCharge = 0;
     }
     

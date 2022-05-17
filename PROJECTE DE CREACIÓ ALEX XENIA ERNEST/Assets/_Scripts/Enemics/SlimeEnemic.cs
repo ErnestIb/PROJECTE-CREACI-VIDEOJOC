@@ -95,13 +95,13 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
 
 
     //Colisions
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Bullet")
-    //    {
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
             
-    //    }
-    //}
+        }
+    }
 
     //Rebre mal
     public void TakeDamage(float damage)
