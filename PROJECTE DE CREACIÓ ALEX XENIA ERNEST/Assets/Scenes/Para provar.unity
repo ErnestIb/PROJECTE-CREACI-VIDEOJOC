@@ -1198,7 +1198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &605170867
 Transform:
   m_ObjectHideFlags: 0
@@ -25328,13 +25328,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 100
+  damage: 10
   waypoints:
   - {fileID: 826453308}
   - {fileID: 338205192}
   - {fileID: 1457637327}
   - {fileID: 981212104}
   - {fileID: 671185487}
-  speedRun: 4
+  followDistance: 5
+  noFollowMore: 6
+  stopNearPlayer: 1.6
+  speedRun: 3
   punchRange: 0
   punchDamage: 0
   punchController: {fileID: 0}

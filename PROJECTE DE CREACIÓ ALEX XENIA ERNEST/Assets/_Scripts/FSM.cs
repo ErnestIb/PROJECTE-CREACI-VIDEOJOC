@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class State
 {
@@ -31,6 +32,7 @@ public class FSM<T> where T : Enum
 
     public void Update()
     {
+        Debug.Log(currentState);
         States[currentState].OnStay?.Invoke();
     }
 
