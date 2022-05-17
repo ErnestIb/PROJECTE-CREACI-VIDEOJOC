@@ -46,6 +46,7 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
+
         // Start
         brain.SetOnStay(EPatrol.Start, () =>
         {
@@ -106,8 +107,18 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         {
             brain.ChangeState(EPatrol.Follow);
         }
+
+
         
     }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject)
+    //    {
+
+    //    }
+    //}
 
     void WaitUpdate()
     {
