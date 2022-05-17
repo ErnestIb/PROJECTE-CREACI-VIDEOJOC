@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7531504199244669419}
   - component: {fileID: 7531504199244669418}
   - component: {fileID: 7531504199244669417}
+  - component: {fileID: 4227847112889214161}
   m_Layer: 0
   m_Name: dashEffect
   m_TagString: Untagged
@@ -4786,7 +4787,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -943738567
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -4811,3 +4812,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &4227847112889214161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7531504199244669416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620b1fee70b2ed741ac5365bb85550c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autodestroyTimer: 0.2
