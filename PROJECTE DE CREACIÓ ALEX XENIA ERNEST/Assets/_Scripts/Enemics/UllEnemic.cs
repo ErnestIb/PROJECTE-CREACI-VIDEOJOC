@@ -10,7 +10,7 @@ public class UllEnemic : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         var damageTaker = other.GetComponent<ITakeDamage>();
-        if(other.CompareTag("Player"))
+        if(damageTaker != null)
         {
             damageTaker.TakeDamage(damage);
         }
