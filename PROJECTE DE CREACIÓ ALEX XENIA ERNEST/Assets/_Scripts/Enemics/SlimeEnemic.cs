@@ -112,6 +112,8 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
 
         if (life <= 0)
         {
+            animator.SetTrigger("Death");
+            animator.SetBool("DeathTrue", true);
             Destroy(this.gameObject);
         }
     }
