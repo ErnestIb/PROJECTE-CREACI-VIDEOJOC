@@ -15,18 +15,17 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
     FSM<EPatrol> brain;
 
-    //Seguir y atacar al personaje
     [SerializeField] private float life = 100;
     [SerializeField] private float damage = 10;
-    
-
-
 
     [SerializeField] List<Transform> waypoints;
 
     int nextWaypoint;
 
     float counterTimer;
+
+    [SerializeField] private float tiempoEntreDaño = 1;
+    private float tiempoSiguienteDaño;
 
     [SerializeField] private float followDistance;
     [SerializeField] private float noFollowMore;
@@ -117,50 +116,6 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    Vector3 directionX = new Vector3(1, 0, 0);
-    //    Vector3 directionY = new Vector3(0, 1, 0);
-
-
-    //    if (collision.gameObject.tag != ("Player"))
-    //    {
-    //        while (collision.gameObject)
-    //        {
-
-    //        }
-            
-            
-    //        //if (this.transform.position.x < player.transform.position.x)
-    //        //{
-    //        //    transform.position += -directionX ;
-    //        //    if (this.transform.position.y < player.transform.position.y)
-    //        //    {
-    //        //        transform.position += -directionY;
-    //        //    }
-    //        //    else
-    //        //    {
-    //        //        transform.position += directionY;
-    //        //    }
-    //        //}
-    //        //else
-    //        //{
-    //        //    transform.position += directionX ;
-    //        //    if (this.transform.position.y < player.transform.position.y)
-    //        //    {
-    //        //        transform.position += -directionY;
-    //        //    }
-    //        //    else
-    //        //    {
-    //        //        transform.position += directionY;
-    //        //    }
-    //        //}
-
-            
-
-
-    //    }
-    //}
 
     void WaitUpdate()
     {
@@ -210,31 +165,24 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
     void AttackUpdate()
     {
-        
-
         Punch();
 
         if (!IsPlayerNear(stopNearPlayer))
         {
             brain.ChangeState(EPatrol.Wait);
-
         }
     }
 
     void Punch()
     {
-        counterTimer += Time.deltaTime;
+        tiempoSiguienteDaño -= Time.deltaTime;
+        var damageTaker = player.GetComponent<ITakeDamage>();
 
-        if (counterTimer > 0.5f)
+        if (tiempoSiguienteDaño <= 0 && damageTaker != null)
         {
-            var damageTaker = player.GetComponent<ITakeDamage>();
-            if (damageTaker != null)
-            {
-                damageTaker.TakeDamage(damage);
-            }
-        }
-
-            
+            damageTaker.TakeDamage(damage);
+            tiempoSiguienteDaño = tiempoEntreDaño;
+        }         
     }
 
 

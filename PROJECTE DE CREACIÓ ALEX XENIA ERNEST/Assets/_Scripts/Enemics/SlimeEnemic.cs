@@ -124,5 +124,7 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
         {
             damageTaker.TakeDamage(damage);
         }
+
+        
     }
 }
