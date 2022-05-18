@@ -28,7 +28,7 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
 
     public void Update()
     {
-        //TakeDamage(1);
+        
     }
 
     protected virtual void Start()
@@ -38,6 +38,7 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
         Dead = false;
         healthBar.SetMaxHealth(100);//MaxHealth);
         shieldBar.SetMaxShield(maxShield);
+        //TakeDamage(80);
     }
 
     public virtual void TakeDamage(int amount)
