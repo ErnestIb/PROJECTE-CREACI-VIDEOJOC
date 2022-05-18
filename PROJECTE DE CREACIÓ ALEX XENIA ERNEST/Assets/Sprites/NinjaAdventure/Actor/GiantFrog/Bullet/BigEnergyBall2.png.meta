@@ -1,0 +1,488 @@
+fileFormatVersion: 2
+guid: ac832f4a9d9d02a47ac53aabb0ca0521
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1231557124495711617
+    second: BigEnergyBall2_0
+  - first:
+      213: -3451846941065081703
+    second: BigEnergyBall2_1
+  - first:
+      213: -4675670377936639837
+    second: BigEnergyBall2_2
+  - first:
+      213: 905458121742247263
+    second: BigEnergyBall2_3
+  - first:
+      213: -5467112561844140226
+    second: BigEnergyBall2_4
+  - first:
+      213: -2761487010977800159
+    second: BigEnergyBall2_5
+  - first:
+      213: 8871042710482560803
+    second: BigEnergyBall2_6
+  - first:
+      213: -530573448013389596
+    second: BigEnergyBall2_7
+  - first:
+      213: -3231990351041503092
+    second: BigEnergyBall2_8
+  - first:
+      213: 557442726276870805
+    second: BigEnergyBall2_9
+  - first:
+      213: 2302702486343662917
+    second: BigEnergyBall2_10
+  - first:
+      213: 3711782138989928704
+    second: BigEnergyBall2_11
+  - first:
+      213: 4750822214246559827
+    second: BigEnergyBall2_12
+  - first:
+      213: 2612657361713231384
+    second: BigEnergyBall2_13
+  - first:
+      213: 9010298620492057704
+    second: BigEnergyBall2_14
+  - first:
+      213: -8864479818984957807
+    second: BigEnergyBall2_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BigEnergyBall2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d1b2efdae571110800000000000000
+      internalID: 1231557124495711617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_1
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 300.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c0ccaee739810d0800000000000000
+      internalID: -3451846941065081703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_2
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 300.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a82544609eac1fb0800000000000000
+      internalID: -4675670377936639837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_3
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 300.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5560794d55d09c00800000000000000
+      internalID: 905458121742247263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37443c471ae024b0800000000000000
+      internalID: -5467112561844140226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_5
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 200
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12020dac13a3da9d0800000000000000
+      internalID: -2761487010977800159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_6
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 200
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 327a1a928564c1b70800000000000000
+      internalID: 8871042710482560803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_7
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 200.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e068e7924603a8f0800000000000000
+      internalID: -530573448013389596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c806ea846e9a523d0800000000000000
+      internalID: -3231990351041503092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_9
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 99
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 592bb52c43f6cb700800000000000000
+      internalID: 557442726276870805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_10
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 100.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54d3ce906b7d4ff10800000000000000
+      internalID: 2302702486343662917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_11
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 100.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00162268036e28330800000000000000
+      internalID: 3711782138989928704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350733702af4ee140800000000000000
+      internalID: 4750822214246559827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_13
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 0.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816f9bc2706024420800000000000000
+      internalID: 2612657361713231384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_14
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 0.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c0f925bd20b0d70800000000000000
+      internalID: 9010298620492057704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigEnergyBall2_15
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 0.75
+        width: 109.75
+        height: 100.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19858c6129a0bf480800000000000000
+      internalID: -8864479818984957807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
