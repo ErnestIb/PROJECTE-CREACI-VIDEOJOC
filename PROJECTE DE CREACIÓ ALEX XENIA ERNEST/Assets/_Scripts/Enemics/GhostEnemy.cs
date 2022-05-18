@@ -23,19 +23,20 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
 
     float counterTimer;
 
+    [SerializeField] private float tiempoEntreDaño = 1;
+    private float tiempoSiguienteDaño;
+
     [SerializeField] private float followDistance;
     [SerializeField] private float noFollowMore;
     [SerializeField] private float stopNearPlayer;
     [SerializeField] private float speedRun;
     Transform player;
+
     Vector3 direction;
 
-    [SerializeField] private float punchRange;
-    [SerializeField] private float punchDamage;
-    [SerializeField] private Transform punchController;
-
-
     Animator animator;
+
+    public float push;
 
     private void Start()
     {
@@ -44,6 +45,9 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
         brain = new FSM<EPatrol>(EPatrol.Start);
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        
+        
 
         // Start
         brain.SetOnStay(EPatrol.Start, () =>
@@ -57,15 +61,13 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
         brain.SetOnExit(EPatrol.Patrol, () => ++nextWaypoint);
         brain.SetOnEnter(EPatrol.Patrol, () =>
         {
-            animator.SetBool("isPatroling", true);
+            
         });
 
         // Wait
         brain.SetOnStay(EPatrol.Wait, WaitUpdate);
         brain.SetOnEnter(EPatrol.Wait, () =>
-        {
-            animator.SetBool("isPatroling", false);
-            animator.SetBool("isAttacking", false);
+        {           
             counterTimer = 0.0f;
         });
 
@@ -74,19 +76,16 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
         brain.SetOnStay(EPatrol.Follow, FollowUpdate);
         brain.SetOnEnter(EPatrol.Follow, () =>
         {
-            animator.SetBool("isPatroling", true);
+            
         });
 
         //Attack
         brain.SetOnStay(EPatrol.Attack, AttackUpdate);
         brain.SetOnEnter(EPatrol.Attack, () =>
         {
-            animator.SetBool("isAttacking", true);
+            
         });
-        brain.SetOnExit(EPatrol.Attack, () =>
-        {
-            animator.SetBool("isAttacking", false);
-        });
+       
 
     }
 
@@ -111,7 +110,7 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
     {
         counterTimer += Time.deltaTime;
 
-        if (counterTimer > 2.0f)
+        if (counterTimer > 1.0f)
         {
             if (nextWaypoint >= waypoints.Count)
             {
@@ -155,27 +154,26 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
 
     void AttackUpdate()
     {
-
-
         Punch();
 
         if (!IsPlayerNear(stopNearPlayer))
         {
             brain.ChangeState(EPatrol.Wait);
-
         }
     }
 
     void Punch()
     {
+        tiempoSiguienteDaño -= Time.deltaTime;
         var damageTaker = player.GetComponent<ITakeDamage>();
-        if (damageTaker != null)
+
+        if (tiempoSiguienteDaño <= 0 && damageTaker != null)
         {
             damageTaker.TakeDamage(damage);
+            this.transform.Translate(Vector3.right * push * Time.deltaTime, Space.World);
+            tiempoSiguienteDaño = tiempoEntreDaño;
         }
     }
-
-
 
     private void Update()
     {
@@ -184,11 +182,15 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
 
     public void TakeDamage(float damage)
     {
+        animator.SetTrigger("TriggerDamage");
+        
         life -= damage;
 
         if (life <= 0)
         {
             Destroy(this.gameObject);
         }
+
+
     }
 }

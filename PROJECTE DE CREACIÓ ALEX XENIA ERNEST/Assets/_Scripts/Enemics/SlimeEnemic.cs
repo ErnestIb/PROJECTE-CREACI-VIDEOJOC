@@ -74,11 +74,11 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
     {
         counterTimer += Time.deltaTime;
 
-        if (counterTimer > 2.0f)
+        if (counterTimer > 3.0f)
         {
             if (nextWaypoint >= waypoints.Count)
             {
-                waypoints.Reverse();
+                
                 brain.ChangeState(EPatrol.Start);
                 return;
             }
@@ -106,10 +106,14 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
     //Rebre mal
     public void TakeDamage(float damage)
     {
+        animator.SetTrigger("Damage");
+
         life -= damage;
 
         if (life <= 0)
         {
+            animator.SetTrigger("Death");
+            animator.SetBool("DeathTrue", true);
             Destroy(this.gameObject);
         }
     }
@@ -122,5 +126,7 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
         {
             damageTaker.TakeDamage(damage);
         }
+
+        
     }
 }
