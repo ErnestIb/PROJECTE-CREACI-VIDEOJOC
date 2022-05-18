@@ -26,8 +26,11 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
     public delegate void OnHitDelegate(int fraction);
     public OnHitDelegate OnHit;
 
+    public bool para = false;
+
     public void Update()
     {
+        
         
     }
 
@@ -36,9 +39,9 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
         currentShield = 0;
         currentHealth = 30;//maxHealth;
         Dead = false;
-        healthBar.SetMaxHealth(100);//MaxHealth);
+        healthBar.SetMaxHealth(maxHealth);
         shieldBar.SetMaxShield(maxShield);
-        //TakeDamage(80);
+        
     }
 
     public virtual void TakeDamage(int amount)
