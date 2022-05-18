@@ -203,6 +203,37 @@ PrefabInstance:
     - {fileID: 9121143026186925098, guid: f42a3ce35bcddf24ab5c316c0d512433, type: 3}
     - {fileID: 9121143026186925525, guid: f42a3ce35bcddf24ab5c316c0d512433, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f42a3ce35bcddf24ab5c316c0d512433, type: 3}
+--- !u!1 &1562051113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1562051114}
+  m_Layer: 0
+  m_Name: FiringPointPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1562051114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562051113}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1620503991}
+  m_Father: {fileID: 1653695436}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1620503990
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,11 +257,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620503990}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1653695436}
+  m_Father: {fileID: 1562051114}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1653695432
@@ -268,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  speed: 4.75
+  speed: 3
   activeSpeed: 0
   horizontal: 0
   vertical: 0
@@ -277,6 +308,8 @@ MonoBehaviour:
   _chargedBlast: {fileID: 8860292091734840542, guid: d57f550633d5cb9428d945a7efc5d5bc,
     type: 3}
   _firePoint: {fileID: 1620503991}
+  _chargedParticle: {fileID: 2951286626079276018, guid: d768b3619b61a6b45837a4f6cdab4d30,
+    type: 3}
 --- !u!95 &1653695434
 Animator:
   serializedVersion: 3
@@ -358,7 +391,7 @@ Transform:
   m_LocalPosition: {x: -100.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1620503991}
+  - {fileID: 1562051114}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
