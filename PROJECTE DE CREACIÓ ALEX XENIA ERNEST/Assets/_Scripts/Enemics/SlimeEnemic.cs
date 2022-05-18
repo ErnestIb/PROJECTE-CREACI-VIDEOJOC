@@ -106,6 +106,8 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
     //Rebre mal
     public void TakeDamage(float damage)
     {
+        animator.SetTrigger("Damage");
+
         life -= damage;
 
         if (life <= 0)
