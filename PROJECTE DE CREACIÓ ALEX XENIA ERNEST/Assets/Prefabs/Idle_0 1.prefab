@@ -164,5 +164,5 @@ MonoBehaviour:
   - {fileID: 0}
   followDistance: 6
   noFollowMore: 8
-  stopNearPlayer: 0
-  speedRun: 2
+  stopNearPlayer: 1
+  speedRun: 2.5

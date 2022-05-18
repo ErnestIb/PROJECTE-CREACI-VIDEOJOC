@@ -155,7 +155,12 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
 
         Punch();
 
-       
+
+        if (!IsPlayerNear(stopNearPlayer))
+        {
+            brain.ChangeState(EPatrol.Wait);
+
+        }
     }
 
     void Punch()
