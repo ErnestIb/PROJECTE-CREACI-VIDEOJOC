@@ -35,9 +35,15 @@ public class PowerupActions : MonoBehaviour
         playerMovement.dashCooldown = 1;
     }
 
+    public ShieldBar shieldBar;
+
     public void ShieldOnlyAction()
     {
+        
+
         healthSystem.currentShield += 30;
+
+        shieldBar.SetShield(30);
     }
 
 }

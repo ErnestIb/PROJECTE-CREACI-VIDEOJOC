@@ -34,7 +34,7 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
 
     protected virtual void Start()
     {
-        currentShield = maxShield;
+        currentShield = 0;
         CurrentHealth = maxHealth;
         Dead = false;
         healthBar.SetMaxHealth(MaxHealth);

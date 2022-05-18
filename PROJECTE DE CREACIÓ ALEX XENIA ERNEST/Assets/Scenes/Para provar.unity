@@ -828,7 +828,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -14489,7 +14489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1659597563}
-  healthSystem: {fileID: 0}
+  healthSystem: {fileID: 1659597571}
+  shieldBar: {fileID: 563537081}
 --- !u!114 &1185684720
 MonoBehaviour:
   m_ObjectHideFlags: 0

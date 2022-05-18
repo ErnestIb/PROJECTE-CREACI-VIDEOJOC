@@ -20,7 +20,7 @@ public class PowerupController : MonoBehaviour
         HandleActivePowerups();
 
         
-        if(timer == 5000)
+        if(timer == 2000)
         RandomSpawnPowerups();
 
         timer++;
@@ -28,7 +28,7 @@ public class PowerupController : MonoBehaviour
 
     public void RandomSpawnPowerups()
     {
-        SpawnPowerup(powerups[Random.Range(0,3)],new Vector3(Random.Range(-123.0f, -65.0f), Random.Range(-14.0f, 20.0f), 0));
+        SpawnPowerup(powerups[Random.Range(0,4)],new Vector3(Random.Range(-123.0f, -65.0f), Random.Range(-14.0f, 20.0f), 0));
 
         timer = 0;
     }
