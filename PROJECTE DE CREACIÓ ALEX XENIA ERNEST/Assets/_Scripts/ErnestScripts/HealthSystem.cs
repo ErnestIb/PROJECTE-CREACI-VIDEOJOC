@@ -9,15 +9,14 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
     public ImprovedHealthBar healthBar;
 
     [SerializeField]
-    private int maxHealth = 100;
+    public int maxHealth = 100;
 
     [SerializeField]
-    private int maxShield = 100;
+    public int maxShield = 100;
 
     public int currentShield;
 
-    public int MaxHealth => maxHealth;
-    public int CurrentHealth; 
+    public int currentHealth; 
 
     public bool Dead { get; private set; }
 
@@ -35,9 +34,9 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
     protected virtual void Start()
     {
         currentShield = 0;
-        CurrentHealth = maxHealth;
+        currentHealth = 30;//maxHealth;
         Dead = false;
-        healthBar.SetMaxHealth(MaxHealth);
+        healthBar.SetMaxHealth(100);//MaxHealth);
         shieldBar.SetMaxShield(maxShield);
     }
 
@@ -50,28 +49,26 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
                 int amountHealth = 0;
                 amountHealth = amount - currentShield;
                 currentShield -= amount;
-                CurrentHealth -= amountHealth;
+                currentHealth -= amountHealth;
             }
             else
             {
                 currentShield -= amount;
             }
-            
-            
+    
         } else
         {
-            CurrentHealth -= amount;
+            currentHealth -= amount;
 
-            OnHit?.Invoke(CurrentHealth / MaxHealth);
+            OnHit?.Invoke(currentHealth / maxHealth);
 
-            if (CurrentHealth <= 0.0f && !Dead)
+            if (currentHealth <= 0.0f && !Dead)
             {
                 FindObjectOfType<LevelManager>().Restart();
             }
         }
 
-        
-        healthBar.SetHealth(CurrentHealth);
+        healthBar.SetHealth(currentHealth);
         shieldBar.SetShield(currentShield);
     }
 

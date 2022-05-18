@@ -22,7 +22,16 @@ public class PowerupActions : MonoBehaviour
 
     public void HealingOnlyAction()
     {
-       healthSystem.CurrentHealth += 30;
+        if (healthSystem.currentHealth > healthSystem.maxHealth-25)
+        {
+            healthSystem.currentHealth += healthSystem.maxHealth - healthSystem.currentHealth;
+        }
+        else
+        {
+            healthSystem.currentHealth += 25;
+        }
+
+        
     }
 
     public void DashBuffStartAction()
@@ -40,10 +49,17 @@ public class PowerupActions : MonoBehaviour
     public void ShieldOnlyAction()
     {
         
+        if(healthSystem.currentShield > healthSystem.maxShield - 25)
+        {
+            healthSystem.currentShield += healthSystem.maxShield - healthSystem.currentShield;
+        }
+        else
+        {
+            healthSystem.currentShield += 25;
+        }
+        
 
-        healthSystem.currentShield += 30;
-
-        shieldBar.SetShield(30);
+        shieldBar.SetShield(+30);
     }
 
 }

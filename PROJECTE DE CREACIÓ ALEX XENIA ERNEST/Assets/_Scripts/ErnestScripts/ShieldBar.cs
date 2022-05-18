@@ -19,7 +19,7 @@ public class ShieldBar : MonoBehaviour
 
     public void SetShield(int shield)
     {
-        slider.value = shield;
+        slider.value += shield;
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }

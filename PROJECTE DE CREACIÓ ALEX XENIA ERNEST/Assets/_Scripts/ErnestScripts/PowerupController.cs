@@ -20,7 +20,7 @@ public class PowerupController : MonoBehaviour
         HandleActivePowerups();
 
         
-        if(timer == 2000)
+        if(timer == 100)
         RandomSpawnPowerups();
 
         timer++;
