@@ -247,7 +247,10 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
     //Rebre mal
     public void TakeDamage(float damage)
     {
+        
+        
         animator.SetTrigger("Damage");
+        
 
         life -= damage;
 
