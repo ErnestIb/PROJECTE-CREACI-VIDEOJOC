@@ -29,8 +29,10 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
     [SerializeField] private float speedRun;
     Transform player;
     Vector3 direction;
+    
 
-   
+
+
     Animator animator;
 
     private void Start()
@@ -40,6 +42,9 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
         brain = new FSM<EPatrol>(EPatrol.Start);
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        
+        
 
         // Start
         brain.SetOnStay(EPatrol.Start, () =>

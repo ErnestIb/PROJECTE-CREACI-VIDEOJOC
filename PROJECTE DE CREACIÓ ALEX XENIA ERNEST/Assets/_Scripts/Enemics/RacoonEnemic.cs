@@ -34,8 +34,9 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
     [SerializeField] private float speedRun;
     Transform player;
     Vector3 direction;
+    Rigidbody2D racoon;
 
-    
+
     Animator animator;
 
     private void Start()
@@ -45,6 +46,8 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         brain = new FSM<EPatrol>(EPatrol.Start);
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        racoon = this.GetComponent<Rigidbody2D>();
 
 
         // Start
@@ -85,10 +88,12 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         {
             animator.SetBool("isAttacking", true);
             counterTimer = 0.0f;
+            racoon.isKinematic = true;
         });
         brain.SetOnExit(EPatrol.Attack, () =>
         {
             animator.SetBool("isAttacking", false);
+            racoon.isKinematic = false;
         });
 
     }
@@ -114,8 +119,45 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
     //private void OnCollisionEnter2D(Collision2D collision)
     //{
-    //    if (collision.gameObject)
+    //    Vector3 directionX = new Vector3(1, 0, 0);
+    //    Vector3 directionY = new Vector3(0, 1, 0);
+
+
+    //    if (collision.gameObject.tag != ("Player"))
     //    {
+    //        while (collision.gameObject)
+    //        {
+
+    //        }
+            
+            
+    //        //if (this.transform.position.x < player.transform.position.x)
+    //        //{
+    //        //    transform.position += -directionX ;
+    //        //    if (this.transform.position.y < player.transform.position.y)
+    //        //    {
+    //        //        transform.position += -directionY;
+    //        //    }
+    //        //    else
+    //        //    {
+    //        //        transform.position += directionY;
+    //        //    }
+    //        //}
+    //        //else
+    //        //{
+    //        //    transform.position += directionX ;
+    //        //    if (this.transform.position.y < player.transform.position.y)
+    //        //    {
+    //        //        transform.position += -directionY;
+    //        //    }
+    //        //    else
+    //        //    {
+    //        //        transform.position += directionY;
+    //        //    }
+    //        //}
+
+            
+
 
     //    }
     //}
@@ -158,7 +200,7 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         if (IsPlayerNear(stopNearPlayer))
         {
             brain.ChangeState(EPatrol.Attack);
-
+            
         }
 
         //el que ha de fer
@@ -205,6 +247,8 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
     //Rebre mal
     public void TakeDamage(float damage)
     {
+        animator.SetTrigger("Damage");
+
         life -= damage;
 
         if (life <= 0)
