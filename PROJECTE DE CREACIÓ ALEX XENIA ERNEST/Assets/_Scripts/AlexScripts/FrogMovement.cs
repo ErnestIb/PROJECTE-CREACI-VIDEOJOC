@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -27,6 +27,8 @@ public class FrogMovement : MonoBehaviour
     [SerializeField] ChargedBlastBehaviour _chargedBlast;
     [SerializeField] Transform _firePoint;
     Vector2 movement;
+    [SerializeField] GameObject _chargedParticle;
+
 
 // Combat
 
@@ -42,7 +44,6 @@ public class FrogMovement : MonoBehaviour
     {
         Move(movement);
         BlastInput();
-
     }
 
     //
@@ -71,6 +72,8 @@ public class FrogMovement : MonoBehaviour
         
 
         animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetBool("Charging", _MovementPossible);
+
     }
 
 
@@ -102,10 +105,12 @@ public class FrogMovement : MonoBehaviour
     {
         _chargeTime -= Time.deltaTime;
         Debug.Log("Charging");
+        _MovementPossible = false;
 
         if(_chargeTime <= 0 && !_canFire)
         {
             _canFire = true;
+            Instantiate(_chargedParticle, _firePoint.position, Quaternion.identity);
             Debug.Log("FinishedCharging");
         }
 
@@ -114,17 +119,29 @@ public class FrogMovement : MonoBehaviour
     void BlastMoveRelease()
     {
         _chargeTime = _chargeTimeDefault;
+        _MovementPossible = true;
         if(_canFire)
         {
-            Debug.Log("Fired!");
-            float angle = Utility.AngleTowardsMouse(new Vector3(_firePoint.position.x,_firePoint.position.y,_firePoint.position.z));
+            
+            Debug.Log("Fired!");    
+            float angle = Utility.AngleTowardsMouse(_firePoint.transform.position);
             Quaternion blastRotation = Quaternion.Euler(new Vector3(0,0,angle));
 
-            var blast = Instantiate(_chargedBlast, _firePoint.position,_firePoint.rotation);
+            var blast = Instantiate(_chargedBlast, _firePoint.position,blastRotation);
             blast.Init(_speed,_damage);
-            
         }
         _canFire = false;
+    }
+
+    public void EnableFrog()
+    {
+        this.enabled = true;
+        // this.transform.position 
+    }
+
+    public void DisableFrog()
+    {
+        this.enabled = false;
     }
 
     
