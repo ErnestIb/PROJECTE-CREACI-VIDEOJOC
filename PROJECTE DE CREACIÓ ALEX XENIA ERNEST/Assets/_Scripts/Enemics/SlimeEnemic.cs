@@ -78,7 +78,7 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
         {
             if (nextWaypoint >= waypoints.Count)
             {
-                waypoints.Reverse();
+                
                 brain.ChangeState(EPatrol.Start);
                 return;
             }
