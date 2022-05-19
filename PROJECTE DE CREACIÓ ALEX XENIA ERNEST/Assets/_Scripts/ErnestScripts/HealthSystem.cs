@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthSystem : MonoBehaviour, IDamageTaker
+public class HealthSystem : MonoBehaviour, ITakeDamage
 {
     public ShieldBar shieldBar;
 
@@ -37,32 +37,39 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
     protected virtual void Start()
     {
         currentShield = 0;
-        currentHealth = 30;//maxHealth;
+        currentHealth = maxHealth;
         Dead = false;
         healthBar.SetMaxHealth(maxHealth);
         shieldBar.SetMaxShield(maxShield);
         
     }
 
-    public virtual void TakeDamage(int amount)
+    public virtual void TakeDamage(float amount)
     {
         if (currentShield > 0)
         {
-            if (currentShield - amount < 0)
+            if (currentShield - (int)amount < 0)
             {
                 int amountHealth = 0;
-                amountHealth = amount - currentShield;
-                currentShield -= amount;
+                amountHealth = (int)amount - currentShield;
+                currentShield -= (int)amount;
                 currentHealth -= amountHealth;
+
+                shieldBar.SetShield(-(int)amount);
+                healthBar.SetHealth(-amountHealth);
             }
             else
             {
-                currentShield -= amount;
+                currentShield -= (int)amount;
+
+                shieldBar.SetShield(-(int)amount);
             }
     
         } else
         {
-            currentHealth -= amount;
+            currentHealth -= (int)amount;
+
+            healthBar.SetHealth(-(int)amount);
 
             OnHit?.Invoke(currentHealth / maxHealth);
 
@@ -72,8 +79,8 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
             }
         }
 
-        healthBar.SetHealth(currentHealth);
-        shieldBar.SetShield(currentShield);
+        //healthBar.SetHealth(currentHealth);
+        //shieldBar.SetShield(currentShield);
     }
 
     protected virtual void Die()
