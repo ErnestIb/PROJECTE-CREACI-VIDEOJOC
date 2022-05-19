@@ -22,23 +22,18 @@ public class FrogMovement : MonoBehaviour
     float _damage = 50f;
     float _speed = 10f;
     bool _canFire;
-    bool _canTransform;
 
     public Animator animator;
     [SerializeField] ChargedBlastBehaviour _chargedBlast;
     [SerializeField] Transform _firePoint;
     Vector2 movement;
     [SerializeField] GameObject _chargedParticle;
-    [SerializeField ] GameObject _Frog;
-    [SerializeField] GameObject _Player;
-    [SerializeField] GameObject _SmokeScreen;
 
 
 // Combat
 
     void Start()
     {   
-        _Frog.SetActive(false);
         activeSpeed = speed;
         rb = this.GetComponent<Rigidbody2D>();
         _chargeTime = _chargeTimeDefault;
@@ -49,10 +44,6 @@ public class FrogMovement : MonoBehaviour
     {
         Move(movement);
         BlastInput();
-        if(Input.GetKeyUp(KeyCode.R))
-        {
-            DisableFrog();
-        }
     }
 
     //
@@ -144,20 +135,13 @@ public class FrogMovement : MonoBehaviour
 
     public void EnableFrog()
     {
-        transform.position = _Player.transform.position;
-        Instantiate(_SmokeScreen,_Player.transform.position, Quaternion.identity);
-        _canTransform = true;
+        this.enabled = true;
+        // this.transform.position 
     }
 
-    private void DisableFrog()
+    public void DisableFrog()
     {
-        if(_canTransform)
-        {
-        _canTransform = false;
-        _Player.SetActive(true);
-        _Player.GetComponent<TransformingScript>().EnablePlayer();
-        _Frog.SetActive(false);
-        }
+        this.enabled = false;
     }
 
     
