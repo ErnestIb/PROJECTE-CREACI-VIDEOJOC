@@ -188,9 +188,13 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
 
         if (life <= 0)
         {
-            Destroy(this.gameObject);
+            animator.SetTrigger("Death");
+            brain.ChangeState(EPatrol.Wait);
         }
+    }
 
-
+    public void Dead()
+    {
+        Destroy(this.gameObject);
     }
 }

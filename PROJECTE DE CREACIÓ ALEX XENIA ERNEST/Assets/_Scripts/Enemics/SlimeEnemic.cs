@@ -94,15 +94,7 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
     }
 
 
-    //Colisions
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Bullet")
-    //    {
-            
-    //    }
-    //}
-
+    
     //Rebre mal
     public void TakeDamage(float damage)
     {
@@ -114,7 +106,7 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
         {
             animator.SetTrigger("Death");
             animator.SetBool("DeathTrue", true);
-            Destroy(this.gameObject);
+            brain.ChangeState(EPatrol.Wait);
         }
     }
 
@@ -128,5 +120,10 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
         }
 
         
+    }
+
+    public void Dead()
+    {
+        Destroy(this.gameObject);
     }
 }
