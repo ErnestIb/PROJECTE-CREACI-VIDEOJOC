@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 9121143026908471374, guid: f42a3ce35bcddf24ab5c316c0d512433,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9121143026908471374, guid: f42a3ce35bcddf24ab5c316c0d512433,
         type: 3}
@@ -279,6 +279,8 @@ GameObject:
   - component: {fileID: 1653695438}
   - component: {fileID: 1653695437}
   - component: {fileID: 1653695439}
+  - component: {fileID: 1653695441}
+  - component: {fileID: 1653695440}
   m_Layer: 0
   m_Name: BigFrog
   m_TagString: Untagged
@@ -482,6 +484,37 @@ MonoBehaviour:
   m_DefaultActionMap: BasePlayerMap
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1653695440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653695432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54bda10dfaae1e7459de2c957736efba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1690762497}
+  _smokeScreen: {fileID: 8408777156301733572, guid: d7999f0ce0c08784f990d0ac9b2ee602,
+    type: 3}
+--- !u!114 &1653695441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653695432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22da3237aec7e6b4d848bce960ba0609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firePoint: {fileID: 1620503991}
+  _chargedBlast: {fileID: 0}
+  _chargedParticle: {fileID: 2951286626079276018, guid: d768b3619b61a6b45837a4f6cdab4d30,
+    type: 3}
 --- !u!1001 &1690762496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -564,8 +597,7 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1659597572, guid: bdf735c322ae89542abd004612923cd2, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdf735c322ae89542abd004612923cd2, type: 3}
 --- !u!1 &1690762497 stripped
 GameObject:
@@ -586,7 +618,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Frog: {fileID: 1653695432}
-  _smokeScreen: {fileID: 0}
+  _smokeScreen: {fileID: 8408777156301733572, guid: d7999f0ce0c08784f990d0ac9b2ee602,
+    type: 3}
 --- !u!1001 &1775513533
 PrefabInstance:
   m_ObjectHideFlags: 0
