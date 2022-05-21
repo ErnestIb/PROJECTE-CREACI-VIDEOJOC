@@ -26,8 +26,8 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
     [SerializeField] private float tiempoEntreDaño = 1;
     private float tiempoSiguienteDaño;
 
-    [SerializeField] private float followDistance;
-    [SerializeField] private float noFollowMore;
+    [SerializeField] public float followDistance;
+    [SerializeField] public float noFollowMore;
     [SerializeField] private float stopNearPlayer;
     [SerializeField] private float speedRun;
     Transform player;
