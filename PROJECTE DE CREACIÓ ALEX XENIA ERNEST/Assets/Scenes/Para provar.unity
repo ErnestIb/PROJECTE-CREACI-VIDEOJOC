@@ -16928,6 +16928,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &793872608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3518383780334689291, guid: c38090365bebe7c4999951e14b160356,
+    type: 3}
+  m_PrefabInstance: {fileID: 1953600247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793872606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed044dc073b584a6ab1923d5ccfe85ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &793872611
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68038,6 +68050,101 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 1909794523107829744}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].name
+      value: Friendly
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[0].duration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[1].duration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[2].duration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[3].duration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].duration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].endAction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].startAction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].endAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].endAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 793872608}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].startAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].startAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 793872608}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].endAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].endAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DashBuffEndAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].startAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].startAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FriendlyBuffStartAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].endAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518383780334689300, guid: c38090365bebe7c4999951e14b160356,
+        type: 3}
+      propertyPath: powerups.Array.data[4].startAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3518383780334689301, guid: c38090365bebe7c4999951e14b160356,
         type: 3}
       propertyPath: m_RootOrder
