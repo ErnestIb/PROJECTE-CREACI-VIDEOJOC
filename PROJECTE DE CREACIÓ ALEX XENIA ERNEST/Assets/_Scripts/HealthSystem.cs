@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthSystem : MonoBehaviour, IDamageTaker
+public class HealthSystem : MonoBehaviour, ITakeDamage
 {
     public ShieldBar shieldBar;
 
     public ImprovedHealthBar healthBar;
 
     [SerializeField]
-    private int maxHealth = 100;
+    private float maxHealth = 100;
 
     [SerializeField]
-    private int maxShield = 100;
+    private float maxShield = 100;
 
-    public int currentShield;
+    public float currentShield;
 
-    public int MaxHealth => maxHealth;
-    public int CurrentHealth; 
+    public float MaxHealth => maxHealth;
+    public float CurrentHealth; 
 
     public bool Dead { get; private set; }
 
@@ -37,17 +37,17 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
         currentShield = 0;
         CurrentHealth = maxHealth;
         Dead = false;
-        healthBar.SetMaxHealth(MaxHealth);
-        shieldBar.SetMaxShield(maxShield);
+        healthBar.SetMaxHealth((int)MaxHealth);
+        shieldBar.SetMaxShield((int)maxShield);
     }
 
-    public virtual void TakeDamage(int amount)
+    public virtual void TakeDamage(float amount)
     {
         if (currentShield > 0)
         {
             if (currentShield - amount < 0)
             {
-                int amountHealth = 0;
+                float amountHealth = 0;
                 amountHealth = amount - currentShield;
                 currentShield -= amount;
                 CurrentHealth -= amountHealth;
@@ -62,7 +62,7 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
         {
             CurrentHealth -= amount;
 
-            OnHit?.Invoke(CurrentHealth / MaxHealth);
+            OnHit?.Invoke((int)(CurrentHealth / MaxHealth));
 
             if (CurrentHealth <= 0.0f && !Dead)
             {
@@ -71,8 +71,8 @@ public class HealthSystem : MonoBehaviour, IDamageTaker
         }
 
         
-        healthBar.SetHealth(CurrentHealth);
-        shieldBar.SetShield(currentShield);
+        healthBar.SetHealth((int)CurrentHealth);
+        shieldBar.SetShield((int)currentShield);
     }
 
     protected virtual void Die()
