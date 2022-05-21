@@ -32,12 +32,14 @@ public class PowerupActions : MonoBehaviour
 
     public void HighSpeedStartAction()
     {
-        playerMovement.activeSpeed = 10;
+        playerMovement.SpeedUpdater(10);
+        
     }
 
     public void HighSpeedEndAction()
     {
-        playerMovement.activeSpeed = playerMovement.speed;
+        playerMovement.SpeedUpdater(-10);
+        
     }
 
     public ImprovedHealthBar healthBar;
@@ -85,7 +87,7 @@ public class PowerupActions : MonoBehaviour
 
     public void DashBuffEndAction()
     {
-        playerMovement.dashCooldown = 1;
+        playerMovement.dashCooldown += 1;
     }
 
     public void FriendlyBuffStartAction()

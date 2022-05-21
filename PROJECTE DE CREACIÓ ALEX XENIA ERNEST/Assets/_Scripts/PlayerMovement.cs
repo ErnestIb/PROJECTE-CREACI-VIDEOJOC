@@ -74,7 +74,8 @@ public class PlayerMovement : MonoBehaviour
 
             if (dashCounter <= 0)
             {
-                activeSpeed = speed;
+                
+                activeSpeed -= dashSpeed;
                 dashCoolCounter = dashCooldown;
             }
         }
@@ -106,10 +107,16 @@ public class PlayerMovement : MonoBehaviour
 
 
             Debug.Log("Dashed");
-            activeSpeed = dashSpeed;
+            if (activeSpeed < activeSpeed + dashSpeed)
+                activeSpeed += dashSpeed;
             dashCounter = dashLength;
         }
 
+    }
+
+    public void SpeedUpdater(float speed )
+    {
+        activeSpeed = speed;
     }
 
    
