@@ -44,7 +44,6 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
 
         brain = new FSM<EPatrol>(EPatrol.Start);
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
 
         
         
@@ -178,6 +177,7 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
     private void Update()
     {
         brain.Update();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public void TakeDamage(float damage)

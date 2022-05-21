@@ -8,7 +8,7 @@ public class ChargedBlastBehaviour : MonoBehaviour
 
     private float _speed;
     private float _lifeTime = 4;
-    private float _damage;
+    private float _damage = 30;
 
     private Rigidbody2D _rigidBody;
     private Collider2D _collider;
@@ -26,15 +26,15 @@ public class ChargedBlastBehaviour : MonoBehaviour
         return _damage;
     }
     
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     var damageTaker = other.GetComponent<IDamageTaker>();
-    //     if (damageTaker != null)
-    //     {
-    //         damageTaker.TakeDamage(DamageCalculator());
-    //     }
-    //     Destroy(gameObject);
-    // }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var damageTaker = other.GetComponent<IDamageTaker>();
+        if (damageTaker != null && other.tag == ("Enemy"))
+        {
+            damageTaker.TakeDamage((int)DamageCalculator());
+            Destroy(gameObject);
+        }
+    }
 
     void DestroyOverTime()
     {

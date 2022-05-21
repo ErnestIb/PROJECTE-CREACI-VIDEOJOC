@@ -44,7 +44,6 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
         brain = new FSM<EPatrol>(EPatrol.Start);
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
 
         racoon = this.GetComponent<Rigidbody2D>();
 
@@ -189,6 +188,8 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
     private void Update()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
         brain.Update();
     }
 
