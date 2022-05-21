@@ -114,10 +114,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public void SpeedUpdater(float speed )
-    {
-        activeSpeed = speed;
-    }
 
    
 }

@@ -32,13 +32,13 @@ public class PowerupActions : MonoBehaviour
 
     public void HighSpeedStartAction()
     {
-        playerMovement.SpeedUpdater(10);
+        playerMovement.activeSpeed = 10;
         
     }
 
     public void HighSpeedEndAction()
     {
-        playerMovement.SpeedUpdater(-10);
+        playerMovement.activeSpeed = playerMovement.speed;
         
     }
 
