@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform Target;
+    public GameObject Target;
     public Vector3 Offset;
     private InputAction detectLeftShiftKey;
 
@@ -24,8 +24,9 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Target = GameObject.FindGameObjectWithTag("Player");
         if (detectLeftShiftKey.ReadValue<float>() != 1)
-        transform.position = Vector3.Lerp(transform.position,Target.position+Offset, Smoothing * Time.fixedDeltaTime);
+        transform.position = Vector3.Lerp(transform.position,Target.transform.position+Offset, Smoothing * Time.fixedDeltaTime);
         
     }
 }

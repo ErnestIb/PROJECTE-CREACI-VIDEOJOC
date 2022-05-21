@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem
+using UnityEngine.InputSystem;  
 
 public class FrogCombat : MonoBehaviour
 {
@@ -31,6 +31,11 @@ public class FrogCombat : MonoBehaviour
     void FixedUpdate()
     {
         BlastInput();
+    }
+
+    void OnFire()
+    {
+
     }
 
     void BlastInput()
