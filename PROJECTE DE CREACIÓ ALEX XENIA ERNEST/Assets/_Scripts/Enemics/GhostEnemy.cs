@@ -23,15 +23,20 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
 
     float counterTimer;
 
+    [SerializeField] private float tiempoEntreDaño = 1;
+    private float tiempoSiguienteDaño;
+
     [SerializeField] private float followDistance;
     [SerializeField] private float noFollowMore;
     [SerializeField] private float stopNearPlayer;
     [SerializeField] private float speedRun;
     Transform player;
+
     Vector3 direction;
 
-   
     Animator animator;
+
+    public float push;
 
     private void Start()
     {
@@ -40,6 +45,9 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
         brain = new FSM<EPatrol>(EPatrol.Start);
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        
+        
 
         // Start
         brain.SetOnStay(EPatrol.Start, () =>
@@ -146,23 +154,26 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
 
     void AttackUpdate()
     {
-
-
         Punch();
 
-       
+        if (!IsPlayerNear(stopNearPlayer))
+        {
+            brain.ChangeState(EPatrol.Wait);
+        }
     }
 
     void Punch()
     {
+        tiempoSiguienteDaño -= Time.deltaTime;
         var damageTaker = player.GetComponent<ITakeDamage>();
-        if (damageTaker != null)
+
+        if (tiempoSiguienteDaño <= 0 && damageTaker != null)
         {
             damageTaker.TakeDamage(damage);
+            this.transform.Translate(Vector3.right * push * Time.deltaTime, Space.World);
+            tiempoSiguienteDaño = tiempoEntreDaño;
         }
     }
-
-
 
     private void Update()
     {
@@ -177,7 +188,13 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
 
         if (life <= 0)
         {
-            Destroy(this.gameObject);
+            animator.SetTrigger("Death");
+            brain.ChangeState(EPatrol.Wait);
         }
+    }
+
+    public void Dead()
+    {
+        Destroy(this.gameObject);
     }
 }

@@ -78,7 +78,7 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
         {
             if (nextWaypoint >= waypoints.Count)
             {
-                waypoints.Reverse();
+                
                 brain.ChangeState(EPatrol.Start);
                 return;
             }
@@ -94,23 +94,19 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
     }
 
 
-    //Colisions
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Bullet")
-    //    {
-            
-    //    }
-    //}
-
+    
     //Rebre mal
     public void TakeDamage(float damage)
     {
+        animator.SetTrigger("Damage");
+
         life -= damage;
 
         if (life <= 0)
         {
-            Destroy(this.gameObject);
+            animator.SetTrigger("Death");
+            animator.SetBool("DeathTrue", true);
+            brain.ChangeState(EPatrol.Wait);
         }
     }
 
@@ -122,5 +118,12 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
         {
             damageTaker.TakeDamage(damage);
         }
+
+        
+    }
+
+    public void Dead()
+    {
+        Destroy(this.gameObject);
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,25 +16,18 @@ public class FrogMovement : MonoBehaviour
     public float vertical;
     public bool _MovementPossible;
 
-    //attack
-    float _chargeTime;
-    float _chargeTimeDefault = 1f;
-    float _damage = 50f;
-    float _speed = 10f;
-    bool _canFire;
 
     public Animator animator;
-    [SerializeField] ChargedBlastBehaviour _chargedBlast;
-    [SerializeField] Transform _firePoint;
     Vector2 movement;
+
 
 // Combat
 
     void Start()
     {   
+        gameObject.SetActive(false);
         activeSpeed = speed;
         rb = this.GetComponent<Rigidbody2D>();
-        _chargeTime = _chargeTimeDefault;
     }
 
     // Update is called once per frame
@@ -42,7 +35,6 @@ public class FrogMovement : MonoBehaviour
     {
         Move(movement);
         BlastInput();
-
     }
 
     //
@@ -71,6 +63,8 @@ public class FrogMovement : MonoBehaviour
         
 
         animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetBool("Charging", _MovementPossible);
+
     }
 
 
@@ -85,48 +79,15 @@ public class FrogMovement : MonoBehaviour
     // COMBAT
     //
 
-
     private void BlastInput()
     {
         if(Input.GetMouseButton(0))
         {
-            BlastMoveCharger();
+            _MovementPossible = false;
         }
         else if(Input.GetMouseButtonUp(0))
         {
-            BlastMoveRelease();
+        _MovementPossible = true;
         }
     }
-
-    private void BlastMoveCharger()
-    {
-        _chargeTime -= Time.deltaTime;
-        Debug.Log("Charging");
-
-        if(_chargeTime <= 0 && !_canFire)
-        {
-            _canFire = true;
-            Debug.Log("FinishedCharging");
-        }
-
-    }
-
-    void BlastMoveRelease()
-    {
-        _chargeTime = _chargeTimeDefault;
-        if(_canFire)
-        {
-            Debug.Log("Fired!");
-            float angle = Utility.AngleTowardsMouse(new Vector3(_firePoint.position.x,_firePoint.position.y,_firePoint.position.z));
-            Quaternion blastRotation = Quaternion.Euler(new Vector3(0,0,angle));
-
-            var blast = Instantiate(_chargedBlast, _firePoint.position,_firePoint.rotation);
-            blast.Init(_speed,_damage);
-            
-        }
-        _canFire = false;
-    }
-
-    
-
 }

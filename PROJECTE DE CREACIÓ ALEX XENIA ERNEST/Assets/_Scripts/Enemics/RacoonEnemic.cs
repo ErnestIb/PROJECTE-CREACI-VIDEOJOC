@@ -15,12 +15,8 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
     FSM<EPatrol> brain;
 
-    //Seguir y atacar al personaje
     [SerializeField] private float life = 100;
     [SerializeField] private float damage = 10;
-    
-
-
 
     [SerializeField] List<Transform> waypoints;
 
@@ -28,14 +24,18 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
     float counterTimer;
 
+    [SerializeField] private float tiempoEntreDaño = 1;
+    private float tiempoSiguienteDaño;
+
     [SerializeField] private float followDistance;
     [SerializeField] private float noFollowMore;
     [SerializeField] private float stopNearPlayer;
     [SerializeField] private float speedRun;
     Transform player;
     Vector3 direction;
+    Rigidbody2D racoon;
 
-    
+
     Animator animator;
 
     private void Start()
@@ -45,6 +45,8 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         brain = new FSM<EPatrol>(EPatrol.Start);
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        racoon = this.GetComponent<Rigidbody2D>();
 
 
         // Start
@@ -85,10 +87,12 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         {
             animator.SetBool("isAttacking", true);
             counterTimer = 0.0f;
+            racoon.isKinematic = true;
         });
         brain.SetOnExit(EPatrol.Attack, () =>
         {
             animator.SetBool("isAttacking", false);
+            racoon.isKinematic = false;
         });
 
     }
@@ -112,13 +116,6 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject)
-    //    {
-
-    //    }
-    //}
 
     void WaitUpdate()
     {
@@ -158,7 +155,7 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         if (IsPlayerNear(stopNearPlayer))
         {
             brain.ChangeState(EPatrol.Attack);
-
+            
         }
 
         //el que ha de fer
@@ -168,31 +165,24 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
     void AttackUpdate()
     {
-        
-
         Punch();
 
         if (!IsPlayerNear(stopNearPlayer))
         {
             brain.ChangeState(EPatrol.Wait);
-
         }
     }
 
     void Punch()
     {
-        counterTimer += Time.deltaTime;
+        tiempoSiguienteDaño -= Time.deltaTime;
+        var damageTaker = player.GetComponent<ITakeDamage>();
 
-        if (counterTimer > 0.5f)
+        if (tiempoSiguienteDaño <= 0 && damageTaker != null)
         {
-            var damageTaker = player.GetComponent<ITakeDamage>();
-            if (damageTaker != null)
-            {
-                damageTaker.TakeDamage(damage);
-            }
-        }
-
-            
+            damageTaker.TakeDamage(damage);
+            tiempoSiguienteDaño = tiempoEntreDaño;
+        }         
     }
 
 
@@ -205,11 +195,22 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
     //Rebre mal
     public void TakeDamage(float damage)
     {
+        
+        
+        animator.SetTrigger("Damage");
+        
+
         life -= damage;
 
         if (life <= 0)
         {
-            Destroy(this.gameObject);
+            animator.SetTrigger("Death"); 
+            brain.ChangeState(EPatrol.Wait);
         }
+    }
+
+    public void Dead()
+    {
+        Destroy(this.gameObject);
     }
 }
