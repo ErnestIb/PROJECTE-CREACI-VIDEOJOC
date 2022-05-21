@@ -18,10 +18,7 @@ public class FrogMovement : MonoBehaviour
 
 
     public Animator animator;
-    [SerializeField] ChargedBlastBehaviour _chargedBlast;
-    [SerializeField] Transform _firePoint;
     Vector2 movement;
-    [SerializeField] GameObject _chargedParticle;
 
 
 // Combat

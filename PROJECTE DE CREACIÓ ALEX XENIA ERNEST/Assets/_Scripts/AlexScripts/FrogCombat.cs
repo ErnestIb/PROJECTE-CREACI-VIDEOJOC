@@ -9,7 +9,7 @@ public class FrogCombat : MonoBehaviour
      
 
     [SerializeField] Transform _firePoint;
-    [SerializeField] ChargedBlastBehaviour _chargedBlast;
+    [SerializeField] GameObject _chargedBlast;
     [SerializeField] GameObject _chargedParticle;
 
 
@@ -67,7 +67,7 @@ public class FrogCombat : MonoBehaviour
             Quaternion blastRotation = Quaternion.Euler(new Vector3(0,0,angle));
 
             var blast = Instantiate(_chargedBlast, _firePoint.position,blastRotation);
-            blast.Init(_speed,_damage);
+            blast.GetComponent<ChargedBlastBehaviour>().Init(_speed,_damage);
         }
         _canFire = false;
     }

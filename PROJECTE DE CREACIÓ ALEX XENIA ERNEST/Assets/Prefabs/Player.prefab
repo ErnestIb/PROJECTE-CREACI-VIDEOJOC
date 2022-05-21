@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 1630282887}
   - component: {fileID: 1659597568}
   - component: {fileID: 1659597563}
+  - component: {fileID: 1690762498}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -472,6 +473,21 @@ MonoBehaviour:
   currentShield: 0
   currentHealth: 0
   para: 0
+--- !u!114 &1690762498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962933261364294269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 750880b01e7850c4dbdd3da6319a2695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Frog: {fileID: 0}
+  _smokeScreen: {fileID: 8408777156301733572, guid: d7999f0ce0c08784f990d0ac9b2ee602,
+    type: 3}
 --- !u!1001 &1665420120
 PrefabInstance:
   m_ObjectHideFlags: 0

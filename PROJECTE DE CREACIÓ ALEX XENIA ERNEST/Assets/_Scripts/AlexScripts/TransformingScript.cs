@@ -11,7 +11,7 @@ public class TransformingScript : MonoBehaviour
     {
 
     }
-    void Update()
+    void LateUpdate()
     {
         if(Input.GetKeyUp(KeyCode.R))
         {
