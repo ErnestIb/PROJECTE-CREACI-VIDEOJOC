@@ -43,15 +43,22 @@ public class PowerupBehaviour : MonoBehaviour
         if (powerup.name == "Healing")
         {
             animator.SetBool("Life", true);
-        } else if (powerup.name == "Shield")
+        }
+        else if (powerup.name == "Shield")
         {
             animator.SetBool("Shield", true);
-        } else if (powerup.name == "SuperDash")
+        }
+        else if (powerup.name == "SuperDash")
         {
             animator.SetBool("Superdash", true);
-        } else if (powerup.name == "HighSpeed")
+        }
+        else if (powerup.name == "HighSpeed")
         {
             animator.SetBool("Speed", true);
+        }
+        else if (powerup.name == "Friendly")
+        {
+            animator.SetBool("Friendly", true);
         }
         
     }
