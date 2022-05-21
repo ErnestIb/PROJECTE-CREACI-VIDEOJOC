@@ -38,6 +38,7 @@ public class PowerupBehaviour : MonoBehaviour
     {
         this.powerup = powerup;
         gameObject.name = powerup.name;
+
         animator = GetComponent<Animator>();
         if (powerup.name == "Healing")
         {
