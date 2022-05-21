@@ -32,6 +32,12 @@ public class FrogCombat : MonoBehaviour
     {
         BlastInput();
     }
+
+    void OnFire()
+    {
+
+    }
+
     void BlastInput()
     {
         if(Input.GetMouseButton(0))
