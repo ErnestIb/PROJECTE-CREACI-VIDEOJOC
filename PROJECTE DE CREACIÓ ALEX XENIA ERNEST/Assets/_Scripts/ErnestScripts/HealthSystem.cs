@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour, ITakeDamage
 {
+    Animator animator;
+
     public ShieldBar shieldBar;
 
     public ImprovedHealthBar healthBar;
@@ -41,11 +43,14 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         Dead = false;
         healthBar.SetMaxHealth(maxHealth);
         shieldBar.SetMaxShield(maxShield);
-        
+
+        animator = GetComponent<Animator>();
     }
 
     public virtual void TakeDamage(float amount)
     {
+        animator.SetTrigger("damage");
+
         if (currentShield > 0)
         {
             if (currentShield - (int)amount < 0)
