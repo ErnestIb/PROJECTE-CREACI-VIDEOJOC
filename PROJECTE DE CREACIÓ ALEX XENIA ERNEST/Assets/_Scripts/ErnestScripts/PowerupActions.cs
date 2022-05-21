@@ -10,6 +10,9 @@ public class PowerupActions : MonoBehaviour
     [SerializeField]
     private HealthSystem healthSystem;
 
+    //[SerializeField]
+    private RacoonEnemic racoonEnemic;
+
     public void HighSpeedStartAction()
     {
         playerMovement.activeSpeed = 10;
@@ -68,8 +71,19 @@ public class PowerupActions : MonoBehaviour
         playerMovement.dashCooldown = 1;
     }
 
-    
+    public void FriendlyBuffStartAction()
+    {
+        
+        //racoonEnemic.noFollowMore -= 6;
+    }
+    public void FriendlyBuffEndAction()
+    {
+        
+        //racoonEnemic.noFollowMore += 6;
+    }
 
-    
+
+
+
 
 }
