@@ -33,7 +33,6 @@ public class PlayerAttack : MonoBehaviour
     {
         RotateBow();
         BowInput();
-
     }
 
     
@@ -50,11 +49,6 @@ public class PlayerAttack : MonoBehaviour
         {
             FireBow();
         }
-
-        // if(Input.GetMouseButton(1))
-        // {
-        //     BowGFX.enabled = true;
-        // }
     }
 
 

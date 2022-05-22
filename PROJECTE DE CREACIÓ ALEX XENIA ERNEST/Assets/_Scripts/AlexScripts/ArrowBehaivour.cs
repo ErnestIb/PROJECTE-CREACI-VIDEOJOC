@@ -8,7 +8,7 @@ public class ArrowBehaivour : MonoBehaviour
 
     public float _baseDamage;
     private float _speed;
-    private float _lifeTime = 4;
+    private float _lifeTime = 10;
     private Vector2 direction;
 
     public Rigidbody2D _rigidBody;
@@ -25,7 +25,7 @@ public class ArrowBehaivour : MonoBehaviour
     }
     float DamageCalculator()
     {
-        return 10;
+        return 10+_speed;
     }
     
     private void OnTriggerEnter2D(Collider2D other)
