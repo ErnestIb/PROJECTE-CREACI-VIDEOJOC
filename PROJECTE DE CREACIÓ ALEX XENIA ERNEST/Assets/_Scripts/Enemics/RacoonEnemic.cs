@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RacoonEnemic : MonoBehaviour, ITakeDamage
-{   
+{
+    [SerializeField] public ShopManager shopManager;
     enum EPatrol
     {
         Start,
@@ -213,5 +214,6 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
     public void Dead()
     {
         Destroy(this.gameObject);
+        shopManager.coins += 20;
     }
 }

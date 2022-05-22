@@ -20,27 +20,11 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 
     public int currentHealth; 
 
-    public bool Dead { get; private set; }
-
-    public delegate void OnDeathDelegate();
-    public OnDeathDelegate OnDeath;
-
-    public delegate void OnHitDelegate(int fraction);
-    public OnHitDelegate OnHit;
-
-    public bool para = false;
-
-    public void Update()
-    {
-        
-        
-    }
 
     protected virtual void Start()
     {
         currentShield = 0;
         currentHealth = maxHealth;
-        Dead = false;
         healthBar.SetMaxHealth(maxHealth);
         shieldBar.SetMaxShield(maxShield);
 
@@ -76,22 +60,16 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 
             healthBar.SetHealth(-(int)amount);
 
-            OnHit?.Invoke(currentHealth / maxHealth);
+           
 
-            if (currentHealth <= 0.0f && !Dead)
+            if (currentHealth <= 0.0f)
             {
                 FindObjectOfType<LevelManager>().Restart();
             }
         }
 
-        //healthBar.SetHealth(currentHealth);
-        //shieldBar.SetShield(currentShield);
+       
     }
 
-    protected virtual void Die()
-    {
-        OnDeath?.Invoke();
-        Dead = true;
-        
-    }
+    
 }

@@ -220,6 +220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7078144364177356068, guid: aa5a4f2d37d8a8b419c3c845ef1ac49b,
         type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1352257064}
+    - target: {fileID: 7078144364177356068, guid: aa5a4f2d37d8a8b419c3c845ef1ac49b,
+        type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1398844792}
@@ -480,7 +485,8 @@ SpriteRenderer:
   m_SortingLayerID: -1456771151
   m_SortingLayer: 7
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2880734798192188640, guid: fc502c407590d42a5ac6d4df7d2e0455,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -488,7 +494,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &63642684
@@ -1061,7 +1067,8 @@ SpriteRenderer:
   m_SortingLayerID: -1456771151
   m_SortingLayer: 7
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2880734798192188640, guid: b025000186c41423cb90e9acf5176efa,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1069,7 +1076,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &180739659 stripped
@@ -2421,7 +2428,8 @@ SpriteRenderer:
   m_SortingLayerID: -1456771151
   m_SortingLayer: 7
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2880734798192188640, guid: c2d9ab842077b4a049569438ad1a1ad2,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2429,7 +2437,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &412088003 stripped
@@ -2548,6 +2556,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7078144364177356068, guid: aa5a4f2d37d8a8b419c3c845ef1ac49b,
+        type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1352257064}
     - target: {fileID: 7078144364177356068, guid: aa5a4f2d37d8a8b419c3c845ef1ac49b,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -28991,6 +29004,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4623798820728197099, guid: 495bd8523d6882f48805d40f59896395,
         type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1352257064}
+    - target: {fileID: 4623798820728197099, guid: 495bd8523d6882f48805d40f59896395,
+        type: 3}
       propertyPath: noFollowMore
       value: 6
       objectReference: {fileID: 0}
@@ -30198,6 +30216,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4623798820728197099, guid: 495bd8523d6882f48805d40f59896395,
         type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1352257064}
+    - target: {fileID: 4623798820728197099, guid: 495bd8523d6882f48805d40f59896395,
+        type: 3}
       propertyPath: noFollowMore
       value: 6
       objectReference: {fileID: 0}
@@ -31347,6 +31370,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7078144364177356068, guid: aa5a4f2d37d8a8b419c3c845ef1ac49b,
+        type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1352257064}
     - target: {fileID: 7078144364177356068, guid: aa5a4f2d37d8a8b419c3c845ef1ac49b,
         type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -37558,7 +37586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c9fee207056a6b4db6ae8d55a205b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 10000
+  coins: 0
   coinsTXT: {fileID: 220638306}
   powerupController: {fileID: 793872609}
 --- !u!4 &1352257065
@@ -39760,7 +39788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621918116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -73.85, y: -11.9, z: 10}
+  m_LocalPosition: {x: -74.45, y: -8.55, z: 10}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 1306503044}
@@ -39807,13 +39835,13 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621918116}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.97359985
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -40057,6 +40085,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7078144364177356068, guid: aa5a4f2d37d8a8b419c3c845ef1ac49b,
+        type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1352257064}
     - target: {fileID: 7078144364177356068, guid: aa5a4f2d37d8a8b419c3c845ef1ac49b,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -69100,7 +69133,8 @@ SpriteRenderer:
   m_SortingLayerID: -1456771151
   m_SortingLayer: 7
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2880734798192188640, guid: 42209f9b9fa7c4ed99033d19047cf392,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -69108,7 +69142,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1760111687
@@ -70193,6 +70227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7078144364177356068, guid: aa5a4f2d37d8a8b419c3c845ef1ac49b,
         type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1352257064}
+    - target: {fileID: 7078144364177356068, guid: aa5a4f2d37d8a8b419c3c845ef1ac49b,
+        type: 3}
       propertyPath: waypoints.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -70732,7 +70771,6 @@ MonoBehaviour:
   maxShield: 100
   currentShield: 0
   currentHealth: 0
-  para: 0
 --- !u!1 &2081998335
 GameObject:
   m_ObjectHideFlags: 0
@@ -71231,6 +71269,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4623798820728197099, guid: 495bd8523d6882f48805d40f59896395,
         type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1352257064}
+    - target: {fileID: 4623798820728197099, guid: 495bd8523d6882f48805d40f59896395,
+        type: 3}
       propertyPath: noFollowMore
       value: 6
       objectReference: {fileID: 0}
@@ -71408,6 +71451,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7078144364177356068, guid: aa5a4f2d37d8a8b419c3c845ef1ac49b,
+        type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1352257064}
     - target: {fileID: 7078144364177356068, guid: aa5a4f2d37d8a8b419c3c845ef1ac49b,
         type: 3}
       propertyPath: waypoints.Array.data[0]

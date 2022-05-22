@@ -8,7 +8,7 @@ public class ShopManager : MonoBehaviour
 {
   
     public int[,] shopItems = new int [5,5];
-    public float coins=100;
+    public float coins=0;
     public Text coinsTXT;
     public PowerupController powerupController;
 
@@ -49,20 +49,20 @@ public class ShopManager : MonoBehaviour
 
             if (ButtonRef.GetComponent<ButtonInfo>().itemID == 1)
             {
-                powerupController.SpawnPowerup(powerupController.powerups[0], new Vector3(-75f, -11, 0));
+                powerupController.SpawnPowerup(powerupController.powerups[0], new Vector3(-72.55f, -10.84f, 0));
 
             } 
             else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 2)
             {
-                powerupController.SpawnPowerup(powerupController.powerups[1], new Vector3(-75f, -11, 0));
+                powerupController.SpawnPowerup(powerupController.powerups[1], new Vector3(-72.55f, -10.84f, 0));
             }
             else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 3)
             {
-                powerupController.SpawnPowerup(powerupController.powerups[2], new Vector3(-75f, -11, 0));
+                powerupController.SpawnPowerup(powerupController.powerups[2], new Vector3(-72.55f, -10.84f, 0));
             }
             else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 4)
             {
-                powerupController.SpawnPowerup(powerupController.powerups[4], new Vector3(-75f, -11, 0));
+                powerupController.SpawnPowerup(powerupController.powerups[4], new Vector3(-72.55f, -10.84f, 0));
             }
 
 

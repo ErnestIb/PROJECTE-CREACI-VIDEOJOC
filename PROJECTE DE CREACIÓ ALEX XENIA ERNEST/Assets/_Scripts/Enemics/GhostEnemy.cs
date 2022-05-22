@@ -6,6 +6,7 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private float life;
     [SerializeField] private float damage;
+    [SerializeField] public ShopManager shopManager;
     enum EPatrol
     {
         Start,
@@ -196,5 +197,6 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
     public void Dead()
     {
         Destroy(this.gameObject);
+        shopManager.coins += 20;
     }
 }
