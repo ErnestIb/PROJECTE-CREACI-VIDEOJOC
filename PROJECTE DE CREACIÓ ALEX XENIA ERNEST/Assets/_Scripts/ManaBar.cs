@@ -9,7 +9,7 @@ public class ManaBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
-    public void SetMaxShield(int mana)
+    public void SetMaxMana(int mana)
     {
         slider.maxValue = mana;
         slider.value = 0;
@@ -17,7 +17,7 @@ public class ManaBar : MonoBehaviour
         fill.color = gradient.Evaluate(1f);
     }
 
-    public void SetShield(int mana)
+    public void SetMana(int mana)
     {
         slider.value += mana;
 
