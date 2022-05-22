@@ -71516,10 +71516,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas1
       objectReference: {fileID: 0}
+    - target: {fileID: 1374923594047001050, guid: 3b40651e51aa36044b2dc67c881516a2,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 446758491
+      objectReference: {fileID: 0}
     - target: {fileID: 1374923594251397784, guid: 3b40651e51aa36044b2dc67c881516a2,
         type: 3}
       propertyPath: m_Name
       value: Canvas2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1374923594251397788, guid: 3b40651e51aa36044b2dc67c881516a2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1374923594251397788, guid: 3b40651e51aa36044b2dc67c881516a2,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 446758491
       objectReference: {fileID: 0}
     - target: {fileID: 1374923594550448903, guid: 3b40651e51aa36044b2dc67c881516a2,
         type: 3}
