@@ -24,8 +24,8 @@ public class TransformingScript : MonoBehaviour
     public void DisablePlayer()
     {
         _transformation.SetActive(true);
-        gameObject.SetActive(false);
 
         _transformation.GetComponent<TransformingScript>().EnablePlayer();
+        gameObject.SetActive(false);
     }
 }
