@@ -5,7 +5,7 @@ using UnityEngine;
 public class TransformingScript : MonoBehaviour
 {
 
-    [SerializeField] GameObject _Frog;
+    [SerializeField] GameObject _transformation;
     [SerializeField] GameObject _smokeScreen;
     void Start()
     {
@@ -19,16 +19,17 @@ public class TransformingScript : MonoBehaviour
         }
     }
 
-    public void EnablePlayer()
+    public void EnablePlayer(float currentMana)
     {
-        transform.position = _Frog.transform.position;
-        Instantiate(_smokeScreen,_Frog.transform.position, Quaternion.identity);
+        _currentMana = currentMana;
+        transform.position = _transformation.transform.position;
+        Instantiate(_smokeScreen,_transformation.transform.position, Quaternion.identity);
     }
 
     void DisablePlayer()
     {
-        _Frog.SetActive(true);
-        _Frog.GetComponent<FrogTransformation>().EnableFrog();
+        _transformation.SetActive(true);
+        _transformation.GetComponent<TransformingScript>().EnablePlayer(_currentMana);
         gameObject.SetActive(false);
     }
 }
