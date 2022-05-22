@@ -60,16 +60,10 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 
             healthBar.SetHealth(-(int)amount);
 
-           
-
             if (currentHealth <= 0.0f)
             {
                 FindObjectOfType<LevelManager>().Restart();
             }
         }
-
-       
     }
-
-    
 }

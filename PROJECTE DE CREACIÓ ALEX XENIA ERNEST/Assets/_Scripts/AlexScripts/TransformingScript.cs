@@ -7,28 +7,18 @@ public class TransformingScript : MonoBehaviour
 
     [SerializeField] GameObject _transformation;
     [SerializeField] GameObject _smokeScreen;
-    void Start()
-    {
-
-    }
-    void LateUpdate()
-    {
-        if(Input.GetKeyUp(KeyCode.R))
-        {
-            DisablePlayer();
-        }
-    }
 
     public void EnablePlayer()
     {
-        transform.position = _transformation.transform.position;
         Instantiate(_smokeScreen,_transformation.transform.position, Quaternion.identity);
     }
 
-    void DisablePlayer()
+    public void DisablePlayer()
     {
         _transformation.SetActive(true);
-        _transformation.GetComponent<TransformingScript>().EnablePlayer();
+        _transformation.transform.position = transform.position ;
         gameObject.SetActive(false);
+
+        _transformation.GetComponent<TransformingScript>().EnablePlayer();
     }
 }
