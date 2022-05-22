@@ -19,9 +19,8 @@ public class TransformingScript : MonoBehaviour
         }
     }
 
-    public void EnablePlayer(float currentMana)
+    public void EnablePlayer()
     {
-        _currentMana = currentMana;
         transform.position = _transformation.transform.position;
         Instantiate(_smokeScreen,_transformation.transform.position, Quaternion.identity);
     }
@@ -29,7 +28,7 @@ public class TransformingScript : MonoBehaviour
     void DisablePlayer()
     {
         _transformation.SetActive(true);
-        _transformation.GetComponent<TransformingScript>().EnablePlayer(_currentMana);
+        _transformation.GetComponent<TransformingScript>().EnablePlayer();
         gameObject.SetActive(false);
     }
 }

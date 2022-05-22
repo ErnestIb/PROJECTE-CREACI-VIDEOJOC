@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class ManaManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] GameObject _Frog;
+    [SerializeField] GameObject _Ninja;
+
+    float _currentMana, _maxMana;
+    bool _isTransformed;
+
+
+
     void Start()
     {
         
