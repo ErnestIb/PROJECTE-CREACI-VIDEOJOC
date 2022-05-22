@@ -31,7 +31,7 @@ public class ArrowBehaivour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         var damageTaker = other.GetComponent<ITakeDamage>();
-        if (damageTaker != null)
+        if (damageTaker != null && other.gameObject.tag == ("Enemy"))
         {
             damageTaker.TakeDamage(DamageCalculator());
         }

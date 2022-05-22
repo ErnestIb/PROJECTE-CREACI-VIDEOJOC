@@ -28,8 +28,8 @@ public class ChargedBlastBehaviour : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var damageTaker = other.GetComponent<IDamageTaker>();
-        if (damageTaker != null && other.tag == ("Enemy"))
+        var damageTaker = other.GetComponent<ITakeDamage>();
+        if (damageTaker != null && other.gameObject.tag == ("Enemy"))
         {
             damageTaker.TakeDamage((int)DamageCalculator());
             Destroy(gameObject);
