@@ -24,6 +24,11 @@ public class PlayerAttack : MonoBehaviour
     float _ChargeColor;
     bool _ParticleFired;
 
+    private float fireCooldown = 0.4f;
+    private float lastFireTime;
+
+
+
     public void Start()
     {
         // BowGFX.enabled = false;
@@ -32,10 +37,12 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         RotateBow();
-        BowInput();
+        if(CanFire()) BowInput();
     }
-
-    
+    private bool CanFire()
+    {
+       return (lastFireTime + fireCooldown) < Time.time;
+    }
 
     void BowInput()
     {
@@ -89,6 +96,7 @@ public class PlayerAttack : MonoBehaviour
 
 
         _BowCharge = 0;
+        lastFireTime = Time.time;
     }
     
 
