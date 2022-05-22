@@ -18,13 +18,12 @@ public class TransformingScript : MonoBehaviour
     public void EnablePlayer()
     {
         Instantiate(_smokeScreen,_transformation.transform.position, Quaternion.identity);
-        _transformation.transform.position = transform.position ;
+        transform.position = _transformation.transform.position;
     }
 
     public void DisablePlayer()
     {
         _transformation.SetActive(true);
-
         _transformation.GetComponent<TransformingScript>().EnablePlayer();
         gameObject.SetActive(false);
     }
