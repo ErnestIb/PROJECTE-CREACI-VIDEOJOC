@@ -3626,7 +3626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  Offset: {x: 0, y: 0, z: -10}
+  Offset: {x: 0, y: 0, z: 100}
   Smoothing: 5
 --- !u!114 &556529507
 MonoBehaviour:
@@ -30546,7 +30546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Frog: {fileID: 2034287915}
   _Ninja: {fileID: 2962933260775130251}
-  _ManaBar: {fileID: 0}
+  _ManaBar: {fileID: 1291014532}
 --- !u!1 &1106475114
 GameObject:
   m_ObjectHideFlags: 0
@@ -32469,23 +32469,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1291014530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7897eeda5a64a462ca96ef5acdef5b85, type: 3}
+  m_Script: {fileID: 11500000, guid: d2b2b4e51d78fae409bdf03897c7a06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1291014533}
   gradient:
     serializedVersion: 2
-    key0: {r: 0.9725491, g: 0.2627451, b: 0.74509805, a: 1}
-    key1: {r: 0.6698113, g: 0.11058204, b: 0.57320875, a: 1}
-    key2: {r: 0.764151, g: 0.046858337, b: 0.53430015, a: 0}
+    key0: {r: 0, g: 0.86250186, b: 0.9716981, a: 1}
+    key1: {r: 0.007843138, g: 0.8470589, b: 0.95294124, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 16577
-    ctime1: 42405
-    ctime2: 65535
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
     ctime3: 0
     ctime4: 0
     ctime5: 0
@@ -32499,8 +32499,8 @@ MonoBehaviour:
     atime5: 0
     atime6: 0
     atime7: 0
-    m_Mode: 1
-    m_NumColorKeys: 3
+    m_Mode: 0
+    m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   fill: {fileID: 1024061878}
 --- !u!114 &1291014533

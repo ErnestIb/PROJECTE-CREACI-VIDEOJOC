@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Target = GameObject.FindGameObjectWithTag("Player");
         if (detectLeftShiftKey.ReadValue<float>() != 1)
