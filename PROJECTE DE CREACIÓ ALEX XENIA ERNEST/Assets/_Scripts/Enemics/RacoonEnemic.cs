@@ -71,11 +71,6 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
             animator.SetBool("isPatroling", false);
             animator.SetBool("isAttacking", false);
             counterTimer = 0.0f;
-            
-        });
-        brain.SetOnExit(EPatrol.Wait, () =>
-        {          
-            
         });
 
 
@@ -220,15 +215,5 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
     {
         Destroy(this.gameObject);
         shopManager.coins += 20;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            racoon.isKinematic = false;
-        }
-
-        //racoon.isKinematic = true;
     }
 }
