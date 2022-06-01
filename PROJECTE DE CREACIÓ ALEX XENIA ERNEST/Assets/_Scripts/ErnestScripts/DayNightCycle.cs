@@ -10,7 +10,7 @@ public class DayNightCycle : MonoBehaviour
 
     public float time;
     
-
+    public LightningScript lightningScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,13 @@ public class DayNightCycle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (lightningScript.time==10)
+        {
+            sun.intensity += 2;
+            Invoke("RemoveLlamp", 0.2f);
+            sun.intensity += 2;
+            Invoke("RemoveLlamp", 0.2f);
+        }
         time++;
         if (time > 500)
         {
@@ -52,6 +59,11 @@ public class DayNightCycle : MonoBehaviour
         if(sun.intensity>0.3)
         sun.intensity = sun.intensity - 0.0001f;
 
+    }
+    
+    public void RemoveLlamp()
+    {
+        sun.intensity -= 2;
     }
 
 }

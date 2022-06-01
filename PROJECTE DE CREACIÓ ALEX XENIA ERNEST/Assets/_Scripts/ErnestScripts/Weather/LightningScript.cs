@@ -30,7 +30,7 @@ public class LightningScript : MonoBehaviour
     public void Appear()
     {
         lightning = Instantiate(lightningPrefab);
-        lightning.gameObject.transform.position = new Vector3(Random.Range(cinemachine.transform.position.x+10, cinemachine.transform.position.x-10), Screen.currentResolution.width/*cinemachine.transform.position.y+10*/, 10);
+        lightning.gameObject.transform.position = new Vector3(Random.Range(cinemachine.transform.position.x+10, cinemachine.transform.position.x-10), cinemachine.transform.position.y+10, 10);
         if (time == 7)
         {
             lightning.gameObject.SetActive(false); 
