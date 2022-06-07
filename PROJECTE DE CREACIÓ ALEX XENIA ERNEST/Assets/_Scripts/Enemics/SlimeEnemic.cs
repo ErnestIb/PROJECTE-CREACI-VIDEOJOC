@@ -128,4 +128,16 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
     {
         Destroy(this.gameObject);
     }
+
+    public void BoingSound()
+    {
+        AudioManager.PlaySound("Boing", GetComponent<AudioSource>()); 
+        //float d = Vector3.Distance(transform.position, FindObjectOfType<PlayerAttack>().transform.position);// uwu
+        //Debug.Log(transform.parent.name +  "   " +d);
+    }
+    public void BubblePop()
+    {
+        AudioManager.PlaySound("BubblePop", GetComponent<AudioSource>());
+    }
+
 }

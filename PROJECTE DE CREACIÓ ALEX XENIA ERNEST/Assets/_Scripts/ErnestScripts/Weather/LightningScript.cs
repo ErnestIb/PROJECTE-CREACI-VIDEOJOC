@@ -12,6 +12,9 @@ public class LightningScript : MonoBehaviour
     [SerializeField]
     public GameObject cinemachine;
 
+    [SerializeField]
+    public GameObject player;
+
     ParticleSystem lightning;
 
     // Start is called before the first frame update
@@ -25,7 +28,20 @@ public class LightningScript : MonoBehaviour
         time++;
         if (time==10)
         Appear();
+        
+        
+        
     }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        var damageTaker = other.GetComponent<ITakeDamage>();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            damageTaker.TakeDamage(1);
+        }
+    }
+
 
     public void Appear()
     {
