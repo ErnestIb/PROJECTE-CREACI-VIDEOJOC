@@ -37,10 +37,35 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public static void PlayMusic(string u, AudioSource source)
+    {
+        Instance._PlayMusic(u, source);
+    }
+
+    private void Start()
+    {
+        PlayMusic("Music", _audioSourceMusic);
+    }
+
 
     public static void PlaySound(string v, AudioSource sourceObject = null)
     {
         Instance._PlaySound(v, sourceObject);
+    }
+
+    private void _PlayMusic(string u, AudioSource musicSource)
+    {
+        var file = FindFileByName(u);
+        if (file == null)
+        {
+            Debug.LogError("No existeix aquest fitxer");
+            return;
+        }
+
+        var source = musicSource != null ? musicSource : _audioSourceMusic;
+        source.clip = file.GetClip();
+        source.volume = file.Volume * GlobalVolumen_Music;
+        source.Play();
     }
 
     private void _PlaySound(string s, AudioSource sourceObject)
