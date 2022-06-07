@@ -18,7 +18,9 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 
     public int currentShield;
 
-    public int currentHealth; 
+    public int currentHealth;
+
+    public GameObject blood;
 
 
     protected virtual void Start()
@@ -34,6 +36,8 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
     public virtual void TakeDamage(float amount)
     {
         animator.SetTrigger("damage");
+
+        Instantiate(blood, transform.position, Quaternion.identity);
 
         if (currentShield > 0)
         {
