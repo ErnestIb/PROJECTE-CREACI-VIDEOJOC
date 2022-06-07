@@ -90857,7 +90857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb975dd161e4f494b8f17ef818ebf2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalVolumen_Music: 0.476
+  GlobalVolumen_Music: 0.167
   GlobalVolumen_SFX: 1
   _audioSourceSFX: {fileID: 2066594986}
   _audioSourceMusic: {fileID: 658056238}
@@ -90865,16 +90865,16 @@ MonoBehaviour:
   - Name: Arrow
     Clip:
     - {fileID: 8300000, guid: 7404d91e2dc05cc44936f332633c4316, type: 3}
-    Volume: 1
+    Volume: 0.086
   - Name: Impact
     Clip:
     - {fileID: 8300000, guid: e51ac93abd3b14f4382a879851e58325, type: 3}
     - {fileID: 8300000, guid: 18cae44f29ac2ab4aa1e5904d005d007, type: 3}
-    Volume: 1
+    Volume: 0.09
   - Name: ImpactMap
     Clip:
     - {fileID: 8300000, guid: 7010f53bace7fe7488aef13cd8dd2fb4, type: 3}
-    Volume: 1
+    Volume: 0.099
   - Name: Blink
     Clip:
     - {fileID: 8300000, guid: 078ddfbd56e6e384cbd14fe62b35439b, type: 3}
@@ -90886,18 +90886,19 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 4db8b48851bcd7e42af993fbd933354b, type: 3}
     - {fileID: 8300000, guid: 7a84020e94aef4c4e8fec768fe8fc461, type: 3}
     - {fileID: 8300000, guid: 985cc58b92f66bd4996ac971cb3a6c41, type: 3}
-    Volume: 0.515
+    Volume: 0.082
   - Name: Boing
     Clip:
     - {fileID: 8300000, guid: 3df0cddc78524764cbf0c8b1ef209042, type: 3}
-    Volume: 1
+    Volume: 0.773
   - Name: Music
     Clip:
     - {fileID: 8300000, guid: 1de7a885e729aa845940784868b9719b, type: 3}
-    Volume: 0.112
-  - Name: 
-    Clip: []
-    Volume: 0
+    Volume: 0.061
+  - Name: BubblePop
+    Clip:
+    - {fileID: 8300000, guid: 41aaa7a075757cd4f81f2abca2e78f9c, type: 3}
+    Volume: 1
   - Name: 
     Clip: []
     Volume: 0
