@@ -196,11 +196,10 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
 
     //Rebre mal
     public void TakeDamage(float damage)
-    {
-        
-        
+    {      
         animator.SetTrigger("Damage");
-        
+
+        AudioManager.PlaySound("Impact", GetComponent<AudioSource>());
 
         life -= damage;
 

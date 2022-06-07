@@ -100,6 +100,8 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
     {
         animator.SetTrigger("Damage");
 
+        AudioManager.PlaySound("Impact", GetComponent<AudioSource>());
+
         life -= damage;
 
         if (life <= 0)

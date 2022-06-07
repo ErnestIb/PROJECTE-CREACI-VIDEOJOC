@@ -35,6 +35,10 @@ public class ArrowBehaivour : MonoBehaviour
         {
             damageTaker.TakeDamage(DamageCalculator());
         }
+        else
+        {
+            AudioManager.PlaySound("ImpactMap", GetComponent<AudioSource>());
+        }
         Destroy(gameObject);
     }
 

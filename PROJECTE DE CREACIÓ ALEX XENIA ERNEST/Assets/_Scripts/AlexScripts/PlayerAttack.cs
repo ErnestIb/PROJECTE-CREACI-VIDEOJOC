@@ -94,6 +94,7 @@ public class PlayerAttack : MonoBehaviour
         ArrowGFX.color = Color.white;
         _ParticleFired = false;
 
+        AudioManager.PlaySound("Arrow", GetComponent<AudioSource>());
 
         _BowCharge = 0;
         lastFireTime = Time.time;
