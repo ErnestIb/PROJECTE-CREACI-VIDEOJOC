@@ -131,8 +131,8 @@ public class SlimeEnemic : MonoBehaviour, ITakeDamage
 
     public void BoingSound()
     {
-        AudioManager.PlaySound("Boing", GetComponent<AudioSource>());
-        float d = Vector3.Distance(transform.position, FindObjectOfType<PlayerAttack>().transform.position);
+        AudioManager.PlaySound("Boing", GetComponent<AudioSource>()); 
+        float d = Vector3.Distance(transform.position, FindObjectOfType<PlayerAttack>().transform.position);// uwu
         Debug.Log(transform.parent.name +  "   " +d);
     }
 
