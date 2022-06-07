@@ -8,6 +8,9 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField]
     public Light2D sun;
 
+    [SerializeField]
+    public Light2D playerLight;
+
     public float time;
     
     public LightningScript lightningScript;
@@ -15,6 +18,7 @@ public class DayNightCycle : MonoBehaviour
     void Start()
     {
         sun.intensity = 1;
+        playerLight.intensity = 0;
     }
 
     // Update is called once per frame
@@ -49,21 +53,35 @@ public class DayNightCycle : MonoBehaviour
 
     public void Sunrise()
     {
-        if(sun.intensity!=1)
-        sun.intensity = sun.intensity + 0.0001f;
+        if (sun.intensity != 1)
+        {
+            sun.intensity = sun.intensity + 0.0001f;
+        }
+        
+        PlayerLightIntensity(-0.001f);
 
     }
 
     public void Sunset()
     {
-        if(sun.intensity>0.3)
-        sun.intensity = sun.intensity - 0.0001f;
+        if (sun.intensity > 0.3)
+        {
+            sun.intensity = sun.intensity - 0.0001f;
+        }
+        
+        PlayerLightIntensity(0.001f);
 
     }
     
     public void RemoveLlamp()
     {
         sun.intensity -= 2;
+    }
+
+    public void PlayerLightIntensity(float intensity)
+    {
+        if(!(playerLight.intensity>=0.54))
+        playerLight.intensity += intensity;
     }
 
 }
