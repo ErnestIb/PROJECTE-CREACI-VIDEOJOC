@@ -185,7 +185,7 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
     {
         animator.SetTrigger("TriggerDamage");
 
-        AudioManager.PlaySound("Impact", GetComponent<AudioSource>());
+      
 
         life -= damage;
 

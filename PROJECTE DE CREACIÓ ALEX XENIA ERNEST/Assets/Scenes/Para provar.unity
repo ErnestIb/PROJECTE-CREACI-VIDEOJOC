@@ -90363,12 +90363,18 @@ MonoBehaviour:
     Clip:
     - {fileID: 8300000, guid: 7010f53bace7fe7488aef13cd8dd2fb4, type: 3}
     Volume: 1
-  - Name: 
-    Clip: []
+  - Name: Blink
+    Clip:
+    - {fileID: 8300000, guid: 078ddfbd56e6e384cbd14fe62b35439b, type: 3}
     Volume: 0
-  - Name: 
-    Clip: []
-    Volume: 0
+  - Name: PlayerWalk
+    Clip:
+    - {fileID: 8300000, guid: 3b0e3962ed24496489a1d53c8063a8ff, type: 3}
+    - {fileID: 8300000, guid: aa7f109783aeef244a0864d211e5c01c, type: 3}
+    - {fileID: 8300000, guid: 4db8b48851bcd7e42af993fbd933354b, type: 3}
+    - {fileID: 8300000, guid: 7a84020e94aef4c4e8fec768fe8fc461, type: 3}
+    - {fileID: 8300000, guid: 985cc58b92f66bd4996ac971cb3a6c41, type: 3}
+    Volume: 0.515
   - Name: 
     Clip: []
     Volume: 0

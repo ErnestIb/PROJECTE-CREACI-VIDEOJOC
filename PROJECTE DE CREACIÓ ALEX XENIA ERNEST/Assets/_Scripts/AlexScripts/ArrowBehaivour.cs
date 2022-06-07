@@ -34,6 +34,7 @@ public class ArrowBehaivour : MonoBehaviour
         if (damageTaker != null && other.gameObject.tag == ("Enemy"))
         {
             damageTaker.TakeDamage(DamageCalculator());
+            AudioManager.PlaySound("Impact", GetComponent<AudioSource>());
         }
         else
         {

@@ -199,7 +199,6 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
     {      
         animator.SetTrigger("Damage");
 
-        AudioManager.PlaySound("Impact", GetComponent<AudioSource>());
 
         life -= damage;
 

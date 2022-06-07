@@ -114,6 +114,9 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-
+    public void WalkingSound()
+    {
+        AudioManager.PlaySound("PlayerWalk", GetComponent<AudioSource>());
+    }
    
 }
