@@ -12,7 +12,7 @@ public class TransformingScript : MonoBehaviour
        if(Input.GetKeyUp(KeyCode.R))
         {
             DisablePlayer();
-        } 
+        }
     }
 
     public void EnablePlayer()

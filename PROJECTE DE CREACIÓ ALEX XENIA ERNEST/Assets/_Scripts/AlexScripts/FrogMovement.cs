@@ -28,6 +28,10 @@ public class FrogMovement : MonoBehaviour
         gameObject.SetActive(false);
         activeSpeed = speed;
         rb = this.GetComponent<Rigidbody2D>();
+        
+        AudioManager.PlaySound("PopRana", GetComponent<AudioSource>());
+
+        
     }
 
     // Update is called once per frame

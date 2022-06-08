@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void FixedUpdate()
     {
         Move(movement);
@@ -118,5 +119,7 @@ public class PlayerMovement : MonoBehaviour
     {
         AudioManager.PlaySound("PlayerWalk", GetComponent<AudioSource>());
     }
+
+
    
 }
