@@ -214,4 +214,21 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         Destroy(this.gameObject);
         shopManager.coins += 20;
     }
+
+    public void BoingRacoon()
+    {
+        AudioManager.PlaySound("BoingRacoon", GetComponent<AudioSource>());
+        //float d = Vector3.Distance(transform.position, FindObjectOfType<PlayerAttack>().transform.position);// uwu
+        //Debug.Log(transform.parent.name +  "   " +d);
+    }
+
+    public void Boom()
+    {
+        AudioManager.PlaySound("BoomRacoon", GetComponent<AudioSource>());
+    }
+
+    public void Hit()
+    {
+        AudioManager.PlaySound("HitDamage", GetComponent<AudioSource>());
+    }
 }

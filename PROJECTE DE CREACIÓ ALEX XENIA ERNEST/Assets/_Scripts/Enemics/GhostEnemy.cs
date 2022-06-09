@@ -201,4 +201,9 @@ public class GhostEnemy : MonoBehaviour, ITakeDamage
         Destroy(this.gameObject);
         shopManager.coins += 20;
     }
+
+    public void Death()
+    {
+        AudioManager.PlaySound("GhostDead", GetComponent<AudioSource>());
+    }
 }

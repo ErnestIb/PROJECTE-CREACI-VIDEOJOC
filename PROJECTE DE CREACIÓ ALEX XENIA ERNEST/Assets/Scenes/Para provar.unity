@@ -6302,6 +6302,7 @@ MonoBehaviour:
   rain: {fileID: 196298891}
   bigRain: {fileID: 1800703717}
   dayNight: {fileID: 283430391}
+  isRaining: 0
 --- !u!4 &271173238
 Transform:
   m_ObjectHideFlags: 0
@@ -37621,7 +37622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1289463512
 Transform:
   m_ObjectHideFlags: 0
@@ -90949,16 +90950,16 @@ MonoBehaviour:
   - Name: Arrow
     Clip:
     - {fileID: 8300000, guid: 7404d91e2dc05cc44936f332633c4316, type: 3}
-    Volume: 0.086
+    Volume: 0.043
   - Name: Impact
     Clip:
     - {fileID: 8300000, guid: e51ac93abd3b14f4382a879851e58325, type: 3}
     - {fileID: 8300000, guid: 18cae44f29ac2ab4aa1e5904d005d007, type: 3}
-    Volume: 0.09
+    Volume: 0.06
   - Name: ImpactMap
     Clip:
     - {fileID: 8300000, guid: 7010f53bace7fe7488aef13cd8dd2fb4, type: 3}
-    Volume: 0.099
+    Volume: 0.056
   - Name: Blink
     Clip:
     - {fileID: 8300000, guid: 078ddfbd56e6e384cbd14fe62b35439b, type: 3}
@@ -90970,7 +90971,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 4db8b48851bcd7e42af993fbd933354b, type: 3}
     - {fileID: 8300000, guid: 7a84020e94aef4c4e8fec768fe8fc461, type: 3}
     - {fileID: 8300000, guid: 985cc58b92f66bd4996ac971cb3a6c41, type: 3}
-    Volume: 0.082
+    Volume: 0.061
   - Name: Boing
     Clip:
     - {fileID: 8300000, guid: 3df0cddc78524764cbf0c8b1ef209042, type: 3}
@@ -90983,24 +90984,35 @@ MonoBehaviour:
     Clip:
     - {fileID: 8300000, guid: 41aaa7a075757cd4f81f2abca2e78f9c, type: 3}
     Volume: 1
-  - Name: 
-    Clip: []
-    Volume: 0
-  - Name: 
-    Clip: []
-    Volume: 0
-  - Name: 
-    Clip: []
-    Volume: 0
-  - Name: 
-    Clip: []
-    Volume: 0
-  - Name: 
-    Clip: []
-    Volume: 0
-  - Name: 
-    Clip: []
-    Volume: 0
+  - Name: PopRana
+    Clip:
+    - {fileID: 8300000, guid: b87ca5d44dd4ba84aab7630bbe251a72, type: 3}
+    Volume: 0.215
+  - Name: Dash
+    Clip:
+    - {fileID: 8300000, guid: 5d9c37a6ac267ec44b1057a330986f48, type: 3}
+    - {fileID: 8300000, guid: 4e1c6f8381120864c9893318e01c772f, type: 3}
+    - {fileID: 8300000, guid: 19d30b363933ce943ab22cf2e7b3a960, type: 3}
+    Volume: 0.262
+  - Name: GhostDead
+    Clip:
+    - {fileID: 8300000, guid: 4e8e00e604e925a47b5f4b36c6ca40c3, type: 3}
+    Volume: 0.081
+  - Name: BoomRacoon
+    Clip:
+    - {fileID: 8300000, guid: 524f4a6b17116df43ab28a4e51745119, type: 3}
+    Volume: 0.078
+  - Name: BoingRacoon
+    Clip:
+    - {fileID: 8300000, guid: 21c376b8f3e6c3747968fa641b22d972, type: 3}
+    - {fileID: 8300000, guid: e9bbcd36c0d30cf4c943f842b630d68d, type: 3}
+    Volume: 0.073
+  - Name: HitDamage
+    Clip:
+    - {fileID: 8300000, guid: d79ae8ab0ddb5a746abd7b1c79ac90d7, type: 3}
+    - {fileID: 8300000, guid: 2debc626f8f415045a42ee5ee4839371, type: 3}
+    - {fileID: 8300000, guid: 858213df45945194ca8ef5281b2d9886, type: 3}
+    Volume: 0.073
   - Name: 
     Clip: []
     Volume: 0
@@ -91125,7 +91137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2120809236
 Transform:
   m_ObjectHideFlags: 0
@@ -91569,6 +91581,7 @@ GameObject:
   - component: {fileID: 1659597563}
   - component: {fileID: 1659597572}
   - component: {fileID: 2962933260775130252}
+  - component: {fileID: 2962933260775130253}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -91587,7 +91600,103 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &2962933260775130253
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962933260775130251}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

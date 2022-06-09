@@ -62,6 +62,9 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         {
             currentHealth -= (int)amount;
 
+            //AudioManager.PlaySound("HitDamage", GetComponent<AudioSource>());
+
+
             healthBar.SetHealth(-(int)amount);
 
             if (currentHealth <= 0.0f)

@@ -13,6 +13,8 @@ public class RainManager : MonoBehaviour
 
     public DayNightCycle dayNight;
 
+    public bool isRaining = false;
+
     void Start()
     {
         rain.gameObject.SetActive(false);
@@ -31,6 +33,8 @@ public class RainManager : MonoBehaviour
                 //Rain();
             }
         }
+
+       
     }
 
     public void Clouds()
@@ -50,6 +54,8 @@ public class RainManager : MonoBehaviour
         bigRain.gameObject.SetActive(true);
         var emissions = rain.emission.rateOverTime;
         emissions = 5;
+
+        isRaining = true;
        
     }
 
@@ -76,6 +82,8 @@ public class RainManager : MonoBehaviour
         
         rain.gameObject.SetActive(false);
         bigRain.gameObject.SetActive(false);
+
+        isRaining = false;
     }
 
     public void Rain()
