@@ -15,6 +15,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] SpriteRenderer BowGFX;
     [SerializeField] Material _materialArrow;
     [SerializeField] GameObject _ArrowParticle;
+
+    [SerializeField] AudioSource audioSource4;
     // [SerializeField] der _Powerder;
 
     private float _BowCharge;
@@ -71,7 +73,7 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("ParticleEmitted");
             _ParticleFired = true;
             Instantiate(_ArrowParticle, _ArrowHandPos.position, Quaternion.identity);
-            AudioManager.PlaySound("Blink", GetComponent<AudioSource>());
+            AudioManager.PlaySound("Blink", audioSource4);
         }    
         if(_BowCharge > _MaxBowCharge) {
             _BowCharge = _MaxBowCharge;
@@ -97,7 +99,7 @@ public class PlayerAttack : MonoBehaviour
         ArrowGFX.color = Color.white;
         _ParticleFired = false;
 
-        AudioManager.PlaySound("Arrow", GetComponent<AudioSource>());
+        AudioManager.PlaySound("Arrow", audioSource4);
 
         _BowCharge = 0;
         lastFireTime = Time.time;

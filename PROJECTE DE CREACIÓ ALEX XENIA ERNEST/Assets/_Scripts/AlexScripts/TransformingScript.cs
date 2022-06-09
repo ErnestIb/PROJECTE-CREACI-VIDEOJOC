@@ -7,6 +7,10 @@ public class TransformingScript : MonoBehaviour
 
     [SerializeField] GameObject _transformation;
     [SerializeField] GameObject _smokeScreen;
+
+    [SerializeField] AudioSource audioSource3;
+    
+
     public void LateUpdate()
     {
        if(Input.GetKeyUp(KeyCode.R))
@@ -19,7 +23,7 @@ public class TransformingScript : MonoBehaviour
     {
         Instantiate(_smokeScreen,_transformation.transform.position, Quaternion.identity);
         transform.position = _transformation.transform.position;
-        AudioManager.PlaySound("Transform", GetComponent<AudioSource>());
+        AudioManager.PlaySound("Transform", audioSource3);
 
     }
 
