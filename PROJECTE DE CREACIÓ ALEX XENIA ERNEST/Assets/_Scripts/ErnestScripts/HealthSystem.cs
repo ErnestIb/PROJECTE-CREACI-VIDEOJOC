@@ -22,6 +22,8 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 
     public GameObject blood;
 
+    [SerializeField] AudioSource audioSource5;
+
 
     protected virtual void Start()
     {
@@ -62,7 +64,7 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         {
             currentHealth -= (int)amount;
 
-            //AudioManager.PlaySound("HitDamage", GetComponent<AudioSource>());
+            AudioManager.PlaySound("HitDamage", audioSource5);
 
 
             healthBar.SetHealth(-(int)amount);

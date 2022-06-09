@@ -227,8 +227,8 @@ public class RacoonEnemic : MonoBehaviour, ITakeDamage
         AudioManager.PlaySound("BoomRacoon", GetComponent<AudioSource>());
     }
 
-    public void Hit()
-    {
-        AudioManager.PlaySound("HitDamage", GetComponent<AudioSource>());
-    }
+    //public void Hit()
+    //{
+    //    AudioManager.PlaySound("HitDamage", GetComponent<AudioSource>());
+    //}
 }
