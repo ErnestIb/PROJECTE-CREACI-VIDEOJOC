@@ -91177,7 +91177,7 @@ MonoBehaviour:
     Clip:
     - {fileID: 8300000, guid: 41aaa7a075757cd4f81f2abca2e78f9c, type: 3}
     Volume: 1
-  - Name: PopRana
+  - Name: Transform
     Clip:
     - {fileID: 8300000, guid: b87ca5d44dd4ba84aab7630bbe251a72, type: 3}
     Volume: 0.215
@@ -91244,6 +91244,38 @@ MonoBehaviour:
     Clip:
     - {fileID: 8300000, guid: 7bae1620a06fab2468eebf2d34531705, type: 3}
     Volume: 0.103
+  - Name: ShowShop
+    Clip:
+    - {fileID: 8300000, guid: f6dfac81951cfd943a321777a15de773, type: 3}
+    Volume: 0.197
+  - Name: HideShop
+    Clip:
+    - {fileID: 8300000, guid: 8fd1efb7502e396409bcd01d515ba18e, type: 3}
+    Volume: 0.206
+  - Name: 
+    Clip: []
+    Volume: 0
+  - Name: 
+    Clip: []
+    Volume: 0
+  - Name: 
+    Clip: []
+    Volume: 0
+  - Name: 
+    Clip: []
+    Volume: 0
+  - Name: 
+    Clip: []
+    Volume: 0
+  - Name: 
+    Clip: []
+    Volume: 0
+  - Name: 
+    Clip: []
+    Volume: 0
+  - Name: 
+    Clip: []
+    Volume: 0
   - Name: 
     Clip: []
     Volume: 0

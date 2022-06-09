@@ -19,6 +19,8 @@ public class TransformingScript : MonoBehaviour
     {
         Instantiate(_smokeScreen,_transformation.transform.position, Quaternion.identity);
         transform.position = _transformation.transform.position;
+        AudioManager.PlaySound("Transform", GetComponent<AudioSource>());
+
     }
 
     public void DisablePlayer()
@@ -26,5 +28,7 @@ public class TransformingScript : MonoBehaviour
         _transformation.SetActive(true);
         _transformation.GetComponent<TransformingScript>().EnablePlayer();
         gameObject.SetActive(false);
+        AudioManager.PlaySound("Transform", GetComponent<AudioSource>());
+
     }
 }

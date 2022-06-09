@@ -10,6 +10,7 @@ public class ShopTriggerCollider : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            AudioManager.PlaySound("ShowShop", GetComponent<AudioSource>());
             uiShop.Show();
         }
     }
@@ -18,6 +19,7 @@ public class ShopTriggerCollider : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            AudioManager.PlaySound("HideShop", GetComponent<AudioSource>());
             uiShop.Hide();
         }
     }
