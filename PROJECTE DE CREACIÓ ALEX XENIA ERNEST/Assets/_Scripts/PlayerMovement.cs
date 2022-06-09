@@ -6,7 +6,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;    
+    public Rigidbody2D rb;
+
+    [SerializeField] AudioSource audioSource1;
+    [SerializeField] AudioSource audioSource2;
+
 
     // Start is called before the first frame update
     public float speed = 1f;
@@ -110,15 +114,16 @@ public class PlayerMovement : MonoBehaviour
                 activeSpeed += dashSpeed;
             dashCounter = dashLength;
 
-            AudioManager.PlaySound("Dash", GetComponent<AudioSource>());
+            AudioManager.PlaySound("Dash", audioSource2);
         }
     }
 
     public void WalkingSound()
     {
-        AudioManager.PlaySound("PlayerWalk", GetComponent<AudioSource>());
+        AudioManager.PlaySound("PlayerWalk", audioSource1);
+        //AudioManager.PlaySound("PlayerWalk", GetComponent<AudioSource>());
     }
 
 
-   
+
 }
