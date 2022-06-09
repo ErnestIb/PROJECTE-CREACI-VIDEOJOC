@@ -53,6 +53,8 @@ public class FrogCombat : MonoBehaviour
             _canFire = true;
             Instantiate(_chargedParticle, _firePoint.position, Quaternion.identity);
             Debug.Log("FinishedCharging");
+
+            AudioManager.PlaySound("BlinkRana", GetComponent<AudioSource>());
         }
 
     }
@@ -68,6 +70,8 @@ public class FrogCombat : MonoBehaviour
 
             var blast = Instantiate(_chargedBlast, _firePoint.position,blastRotation);
             blast.GetComponent<ChargedBlastBehaviour>().Init(_speed,_damage);
+
+            AudioManager.PlaySound("FrogShoot", GetComponent<AudioSource>());
         }
         _canFire = false;
     }

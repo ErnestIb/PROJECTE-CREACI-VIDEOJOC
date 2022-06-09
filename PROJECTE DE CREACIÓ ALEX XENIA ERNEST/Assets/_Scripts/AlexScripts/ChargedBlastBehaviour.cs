@@ -33,6 +33,7 @@ public class ChargedBlastBehaviour : MonoBehaviour
         {
             damageTaker.TakeDamage((int)DamageCalculator());
             Destroy(gameObject);
+            AudioManager.PlaySound("Impact");
         }
     }
 

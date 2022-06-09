@@ -109,6 +109,8 @@ public class PlayerMovement : MonoBehaviour
             if (activeSpeed < activeSpeed + dashSpeed)
                 activeSpeed += dashSpeed;
             dashCounter = dashLength;
+
+            AudioManager.PlaySound("Dash", GetComponent<AudioSource>());
         }
     }
 

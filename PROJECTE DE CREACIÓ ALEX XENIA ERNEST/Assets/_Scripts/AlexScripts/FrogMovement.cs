@@ -76,6 +76,11 @@ public class FrogMovement : MonoBehaviour
         vertical = move2d.x;
     }
 
+    public void Jump()
+    {
+        AudioManager.PlaySound("Jump", GetComponent<AudioSource>());
+    }
+
     //
     // COMBAT
     //
