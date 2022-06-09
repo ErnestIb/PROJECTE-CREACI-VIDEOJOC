@@ -76,6 +76,27 @@ public class PowerupController : MonoBehaviour
             activePowerups[powerup] += powerup.duration;
         }
 
+        if (powerup.name == "Healing")
+        {
+            AudioManager.PlaySound("Heal", GetComponent<AudioSource>());
+        }
+        else if (powerup.name == "Shield")
+        {
+            AudioManager.PlaySound("Shield", GetComponent<AudioSource>());
+        }
+        else if (powerup.name == "SuperDash")
+        {
+            AudioManager.PlaySound("Dashes", GetComponent<AudioSource>());
+        }
+        else if (powerup.name == "HighSpeed")
+        {
+            AudioManager.PlaySound("Speed", GetComponent<AudioSource>());
+        }
+        else if (powerup.name == "Friendly")
+        {
+            AudioManager.PlaySound("Friends", GetComponent<AudioSource>());
+        }
+
         keys = new List<PowerUp>(activePowerups.Keys);
     }
 

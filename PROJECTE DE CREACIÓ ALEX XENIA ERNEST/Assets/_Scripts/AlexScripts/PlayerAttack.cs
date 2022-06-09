@@ -71,12 +71,15 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("ParticleEmitted");
             _ParticleFired = true;
             Instantiate(_ArrowParticle, _ArrowHandPos.position, Quaternion.identity);
+            AudioManager.PlaySound("Blink", GetComponent<AudioSource>());
         }    
         if(_BowCharge > _MaxBowCharge) {
             _BowCharge = _MaxBowCharge;
             Debug.Log("Max reached");
-            }
-        
+
+            //AudioManager.PlaySound("Blink", GetComponent<AudioSource>());
+        }
+
     }
 
     void FireBow()

@@ -65,7 +65,7 @@ public class ShopManager : MonoBehaviour
                 powerupController.SpawnPowerup(powerupController.powerups[4], new Vector3(-72.55f, -10.84f, 0));
             }
 
-
+            AudioManager.PlaySound("Buy", GetComponent<AudioSource>());
 
         }
     }

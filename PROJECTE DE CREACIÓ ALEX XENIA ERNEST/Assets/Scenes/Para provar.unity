@@ -43025,6 +43025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1352257065}
   - component: {fileID: 1352257064}
+  - component: {fileID: 1352257066}
   m_Layer: 0
   m_Name: ShopManager
   m_TagString: Untagged
@@ -43061,6 +43062,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1352257066
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352257063}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1356977655 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2952321087722695791, guid: afe175a5041143b4ca1e0fa283d68300,
@@ -90963,7 +91060,7 @@ MonoBehaviour:
   - Name: Blink
     Clip:
     - {fileID: 8300000, guid: 078ddfbd56e6e384cbd14fe62b35439b, type: 3}
-    Volume: 0
+    Volume: 0.077
   - Name: PlayerWalk
     Clip:
     - {fileID: 8300000, guid: 3b0e3962ed24496489a1d53c8063a8ff, type: 3}
@@ -91013,6 +91110,44 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 2debc626f8f415045a42ee5ee4839371, type: 3}
     - {fileID: 8300000, guid: 858213df45945194ca8ef5281b2d9886, type: 3}
     Volume: 0.073
+  - Name: Buy
+    Clip:
+    - {fileID: 8300000, guid: c698b35650c50534f93372ca74bbfcd1, type: 3}
+    - {fileID: 8300000, guid: b68e2144766b4bb47ba0deb5409f283b, type: 3}
+    - {fileID: 8300000, guid: 81dddbd0bad890b4f9f0b2dadfd9b77f, type: 3}
+    Volume: 0.103
+  - Name: Heal
+    Clip:
+    - {fileID: 8300000, guid: fa649fba35b83da4296b73632e693b64, type: 3}
+    Volume: 0.15
+  - Name: Shield
+    Clip:
+    - {fileID: 8300000, guid: 7f32753560d02e245ae80d38869c99fb, type: 3}
+    Volume: 0.129
+  - Name: Dashes
+    Clip:
+    - {fileID: 8300000, guid: 9c5600bda7b032e41a4955c5e162ad2e, type: 3}
+    Volume: 0.142
+  - Name: Speed
+    Clip:
+    - {fileID: 8300000, guid: 158a8440fe57a12439a8ae392349814e, type: 3}
+    Volume: 0.163
+  - Name: Friends
+    Clip:
+    - {fileID: 8300000, guid: 4b430f81fc341cd44a796c817daa1b2f, type: 3}
+    Volume: 0.124
+  - Name: 
+    Clip: []
+    Volume: 0
+  - Name: 
+    Clip: []
+    Volume: 0
+  - Name: 
+    Clip: []
+    Volume: 0
+  - Name: 
+    Clip: []
+    Volume: 0
   - Name: 
     Clip: []
     Volume: 0
