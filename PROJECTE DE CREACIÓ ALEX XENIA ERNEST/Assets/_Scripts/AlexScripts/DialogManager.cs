@@ -14,11 +14,13 @@ public class DialogManager : MonoBehaviour
     
     private int index;
     public float m_TypingSpeed;
+    private bool Happened;
 
     void Start()
     {
         StartCoroutine(TypeFirstSequence());
         m_ContinueText.SetActive(false);
+        Happened = false;
     }
 
     IEnumerator TypeFirstSequence(){
@@ -45,9 +47,13 @@ public class DialogManager : MonoBehaviour
         if(m_TextDisplayed.text == m_sentences[index] && index != m_sentences.Length-1 ) m_ContinueText.SetActive(true);
         else  m_ContinueText.SetActive(false);
 
-        if(m_sentences.Length-1 == index) m_MainMenu.EnterMenu();
+        if(m_sentences.Length-1 == index && !Happened) 
+        {
+            m_MainMenu.EnterMenu();
+            Happened = true;
+        }
         
-        if (Input.GetKeyDown(KeyCode.Space)&&m_ContinueText.active)
+        if (Input.GetKeyDown(KeyCode.Space) && m_ContinueText.active)
         {
             NextSentence();
         }

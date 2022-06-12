@@ -53,6 +53,8 @@ public class MainMenu : MonoBehaviour
             switch (_previousState)
             {
                 case MenuState.Intro:
+                m_IntroDone = false;
+                
                     break;
                 case MenuState.MainMenu:
                     break;
