@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_IntroDone = true;
+        m_IntroDone = false;
         m_Settings = false;
         m_Play = false;
     }
@@ -70,12 +71,14 @@ public class MainMenu : MonoBehaviour
                 case MenuState.Intro:
                     break;
                 case MenuState.MainMenu:
+                m_IntroDone = true;
                     break;
                 case MenuState.Settings:
                 m_Settings = true;
                     break;
                 case MenuState.Play:
                 m_Play = true;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
                     break;   
             }
         }
