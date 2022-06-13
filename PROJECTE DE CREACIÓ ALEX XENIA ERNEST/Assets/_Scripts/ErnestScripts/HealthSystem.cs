@@ -71,6 +71,8 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 
             if (currentHealth <= 0.0f)
             {
+                //AudioManager.PlaySound("Death", GetComponent<AudioSource>());
+                
                 FindObjectOfType<LevelManager>().Restart();
             }
         }
