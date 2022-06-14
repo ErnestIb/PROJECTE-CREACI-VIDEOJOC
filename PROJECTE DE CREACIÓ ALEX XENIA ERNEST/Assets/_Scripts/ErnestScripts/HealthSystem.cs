@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour, ITakeDamage
 {
@@ -91,6 +92,7 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 
     public void Death()
     {
-        FindObjectOfType<LevelManager>().Restart();
+        //FindObjectOfType<LevelManager>().Restart();
+        SceneManager.LoadScene(2);
     }
 }
