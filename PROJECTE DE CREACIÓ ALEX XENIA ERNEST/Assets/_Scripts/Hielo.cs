@@ -8,12 +8,18 @@ public class Hielo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        playerMovement.isInHielo = true;
+        if (other.tag == "Player")
+        {
+            playerMovement.isInHielo = true;
+        }      
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        playerMovement.isInHielo = false;
+        if (other.tag == "Player")
+        {
+            playerMovement.isInHielo = false;
+        }      
     }
 
 }

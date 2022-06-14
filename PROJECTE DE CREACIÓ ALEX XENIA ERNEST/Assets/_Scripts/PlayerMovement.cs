@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    HealthSystem healthSystem;
 
     [SerializeField] AudioSource audioSource1;
     [SerializeField] AudioSource audioSource2;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float activeSpeed;
 
     public float multiplicadorEnHielo;
+    public float floatVelocity;
 
     //for the dash
     public float dashSpeed = 10f;
@@ -49,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
     {
         activeSpeed = speed;
         rb = this.GetComponent<Rigidbody2D>();
+
+        healthSystem = GetComponent<HealthSystem>();
     }
 
     // Update is called once per frame
@@ -69,41 +73,57 @@ public class PlayerMovement : MonoBehaviour
     {
 
         //basic movement
+        if (!healthSystem.isDead)
+        {
 
-        if (isInHielo) 
-        { 
-            multiplicadorEnHielo = 3; 
+
+            if (isInHielo)
+            {
+                multiplicadorEnHielo = 2;
+                floatVelocity = 0.05f;
+            }
+            else
+            {
+                multiplicadorEnHielo = 1;
+                floatVelocity = 1f;
+            }
+
+            movement.y = horizontal;
+            movement.x = vertical;
+
+            Vector2 targetVelocity = direction * activeSpeed * multiplicadorEnHielo;
+            Vector2 realVelocity = Vector2.Lerp(rb.velocity, targetVelocity, floatVelocity);
+            rb.velocity = realVelocity;
+
+            //rb.MovePosition((Vector2)transform.position + (realVelocity));
+
+
+            animator.SetFloat("Horizontal", movement.y);
+            animator.SetFloat("Vertical", movement.x);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+
+            if (dashCounter > 0)
+            {
+                dashCounter -= Time.deltaTime;
+
+                if (dashCounter <= 0)
+                {
+
+                    activeSpeed -= dashSpeed;
+                    dashCoolCounter = dashCooldown;
+                }
+            }
+
+            if (dashCoolCounter > 0)
+            {
+                dashCoolCounter -= Time.deltaTime;
+            }
         }
         else
         {
-            multiplicadorEnHielo = 1;
+            rb.velocity = new Vector2(0, 0);
         }
-
-        movement.y = horizontal;
-        movement.x = vertical;
-
-        rb.MovePosition((Vector2)transform.position + (direction * activeSpeed * multiplicadorEnHielo * Time.deltaTime));
-
-        animator.SetFloat("Horizontal",movement.y);
-        animator.SetFloat("Vertical", movement.x);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-
-        if (dashCounter > 0)
-        {
-            dashCounter -= Time.deltaTime;
-
-            if (dashCounter <= 0)
-            {
-                
-                activeSpeed -= dashSpeed;
-                dashCoolCounter = dashCooldown;
-            }
-        }
-
-        if (dashCoolCounter > 0)
-        {
-            dashCoolCounter -= Time.deltaTime;
-        }
+        
     }
 
 
