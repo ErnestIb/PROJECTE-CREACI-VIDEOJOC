@@ -24,13 +24,13 @@ public class RainManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dayNight.time == 600/*dayNight.time % 2000 == 0*/)
+        if (dayNight.time % 2000 == 0)
         {
-            Rain();
+            
             if (Random.Range(1, 3) == 1)
             {
                 
-                //Rain();
+                Rain();
             }
         }
 

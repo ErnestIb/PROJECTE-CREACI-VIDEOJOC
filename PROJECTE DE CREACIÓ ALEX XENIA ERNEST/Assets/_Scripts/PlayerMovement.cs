@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 1f;
     public float activeSpeed;
 
+    public float multiplicadorEnHielo;
+
     //for the dash
     public float dashSpeed = 10f;
 
@@ -38,6 +40,9 @@ public class PlayerMovement : MonoBehaviour
     public float disappearTime = 1f;
 
 
+    public bool isInHielo;
+
+
 // Combat
 
     void Start()
@@ -50,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        
         Move(movement);
     }
 
@@ -64,10 +70,19 @@ public class PlayerMovement : MonoBehaviour
 
         //basic movement
 
+        if (isInHielo) 
+        { 
+            multiplicadorEnHielo = 3; 
+        }
+        else
+        {
+            multiplicadorEnHielo = 1;
+        }
+
         movement.y = horizontal;
         movement.x = vertical;
 
-        rb.MovePosition((Vector2)transform.position + (direction * activeSpeed * Time.deltaTime));
+        rb.MovePosition((Vector2)transform.position + (direction * activeSpeed * multiplicadorEnHielo * Time.deltaTime));
 
         animator.SetFloat("Horizontal",movement.y);
         animator.SetFloat("Vertical", movement.x);

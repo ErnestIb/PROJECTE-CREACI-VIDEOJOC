@@ -23147,6 +23147,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0317f23856113a6438316cbf9200ea59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &866777224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 866777226}
+  - component: {fileID: 866777225}
+  - component: {fileID: 866777227}
+  m_Layer: 0
+  m_Name: Hielo
+  m_TagString: Hielo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!60 &866777225
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866777224}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 7.388977, y: 2.9624062}
+      - {x: -11.315407, y: 2.8528614}
+      - {x: -11.378685, y: 2.0456276}
+      - {x: -12.424927, y: 1.7213945}
+      - {x: -12.431465, y: -0.8437214}
+      - {x: -11.432976, y: -1.108676}
+      - {x: -11.313927, y: -1.9087887}
+      - {x: -10.523041, y: -2.0935879}
+      - {x: -10.203407, y: -3.847394}
+      - {x: -6.6415787, y: -3.82199}
+      - {x: -6.3949585, y: -1.8562832}
+      - {x: -2.5929031, y: -1.8157482}
+      - {x: -2.4664993, y: -1.0108852}
+      - {x: -1.5272446, y: -0.92192173}
+      - {x: -1.4507895, y: 0.05925539}
+      - {x: 4.492882, y: 0.04772854}
+      - {x: 4.601433, y: -0.8104019}
+      - {x: 8.429253, y: -0.9067497}
+      - {x: 8.569817, y: 0.01216507}
+      - {x: 9.26419, y: 0.118665814}
+      - {x: 9.226107, y: 1.8669922}
+      - {x: 7.5547323, y: 2.0573444}
+--- !u!4 &866777226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866777224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -110.03745, y: 14.499178, z: 42.700523}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &866777227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866777224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a507bc759dab1a44ca3337929b4f2a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1909794523107829744}
 --- !u!1 &868546576
 GameObject:
   m_ObjectHideFlags: 0
@@ -36926,8 +37018,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213156926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11.337}
-  m_LocalScale: {x: 2.1337, y: 2.1337, z: 2.1337}
+  m_LocalPosition: {x: 0, y: 0, z: -8.7764}
+  m_LocalScale: {x: 1.8776559, y: 1.8776559, z: 1.8776559}
   m_Children:
   - {fileID: 220638308}
   - {fileID: 1522970079}
@@ -36938,7 +37030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -76.038, y: 11}
+  m_AnchoredPosition: {x: -78.062, y: 10.642}
   m_SizeDelta: {x: 800, y: 502.36713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213156928
@@ -45735,7 +45827,7 @@ MonoBehaviour:
   maxShield: 100
   currentShield: 0
   currentHealth: 0
-  blood: {fileID: 6721496078635232046, guid: a8a84a88956b47c4d9114915443d13a4, type: 3}
+  blood: {fileID: 3990642114991272347, guid: 86da75af1e7c3d04aa36e9e042ffa48c, type: 3}
   audioSource5: {fileID: 2962933260775130256}
 --- !u!60 &1659597568
 PolygonCollider2D:
@@ -91257,9 +91349,10 @@ MonoBehaviour:
     Clip:
     - {fileID: 8300000, guid: 8fd1efb7502e396409bcd01d515ba18e, type: 3}
     Volume: 0.206
-  - Name: 
-    Clip: []
-    Volume: 0
+  - Name: Death
+    Clip:
+    - {fileID: 8300000, guid: cf84c0337b5de834aac031f8eac65e3a, type: 3}
+    Volume: 0.086
   - Name: 
     Clip: []
     Volume: 0
@@ -91822,6 +91915,7 @@ MonoBehaviour:
   audioSource2: {fileID: 2962933260775130253}
   speed: 5
   activeSpeed: 1
+  multiplicadorEnHielo: 0
   dashSpeed: 50
   dashCooldown: 1
   dashLength: 0.1
@@ -91833,6 +91927,7 @@ MonoBehaviour:
   dashEffect: {fileID: 8662036662066126851, guid: 3260ef8b152a91c4390ef0bb671e0e6f,
     type: 3}
   disappearTime: 1
+  isInHielo: 0
 --- !u!1 &2962933260775130251
 GameObject:
   m_ObjectHideFlags: 0

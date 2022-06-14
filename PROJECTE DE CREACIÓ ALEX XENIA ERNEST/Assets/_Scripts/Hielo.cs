@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Hielo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public PlayerMovement playerMovement;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        playerMovement.isInHielo = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        
+        playerMovement.isInHielo = false;
     }
+
 }

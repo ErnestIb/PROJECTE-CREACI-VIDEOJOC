@@ -30,6 +30,7 @@ public class ArrowBehaivour : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.tag == "Hielo") { return; }
         var damageTaker = other.GetComponent<ITakeDamage>();
         if (damageTaker != null && other.gameObject.tag == ("Enemy"))
         {
