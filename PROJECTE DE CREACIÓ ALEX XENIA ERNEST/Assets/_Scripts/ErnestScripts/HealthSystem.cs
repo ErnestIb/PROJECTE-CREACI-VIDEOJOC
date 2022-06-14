@@ -6,6 +6,8 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 {
     Animator animator;
 
+    public bool isDead;
+
     public ShieldBar shieldBar;
 
     public ImprovedHealthBar healthBar;
@@ -23,6 +25,7 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
     public GameObject blood;
 
     [SerializeField] AudioSource audioSource5;
+    [SerializeField] AudioSource audioSource6;
 
 
     protected virtual void Start()
@@ -33,48 +36,61 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         shieldBar.SetMaxShield(maxShield);
 
         animator = GetComponent<Animator>();
+
+        isDead = false;
     }
 
     public virtual void TakeDamage(float amount)
     {
-        animator.SetTrigger("damage");
-
-        Instantiate(blood, transform.position, Quaternion.identity);
-
-        if (currentShield > 0)
+        if (!isDead)
         {
-            if (currentShield - (int)amount < 0)
-            {
-                int amountHealth = 0;
-                amountHealth = (int)amount - currentShield;
-                currentShield -= (int)amount;
-                currentHealth -= amountHealth;
+            animator.SetTrigger("damage");
 
-                shieldBar.SetShield(-(int)amount);
-                healthBar.SetHealth(-amountHealth);
+            Instantiate(blood, transform.position, Quaternion.identity);
+
+            if (currentShield > 0)
+            {
+                if (currentShield - (int)amount < 0)
+                {
+                    int amountHealth = 0;
+                    amountHealth = (int)amount - currentShield;
+                    currentShield -= (int)amount;
+                    currentHealth -= amountHealth;
+
+                    shieldBar.SetShield(-(int)amount);
+                    healthBar.SetHealth(-amountHealth);
+                }
+                else
+                {
+                    currentShield -= (int)amount;
+
+                    shieldBar.SetShield(-(int)amount);
+                }
+
             }
             else
             {
-                currentShield -= (int)amount;
+                currentHealth -= (int)amount;
 
-                shieldBar.SetShield(-(int)amount);
+                AudioManager.PlaySound("HitDamage", audioSource5);
+
+
+                healthBar.SetHealth(-(int)amount);
+
+                if (currentHealth <= 0.0f)
+                {
+                    AudioManager.PlaySound("Death", audioSource6);                    
+
+                    animator.SetTrigger("Death");
+
+                    isDead = true;
+                }
             }
-    
-        } else
-        {
-            currentHealth -= (int)amount;
+        }      
+    }
 
-            AudioManager.PlaySound("HitDamage", audioSource5);
-
-
-            healthBar.SetHealth(-(int)amount);
-
-            if (currentHealth <= 0.0f)
-            {
-                //AudioManager.PlaySound("Death", GetComponent<AudioSource>());
-                
-                FindObjectOfType<LevelManager>().Restart();
-            }
-        }
+    public void Death()
+    {
+        FindObjectOfType<LevelManager>().Restart();
     }
 }
