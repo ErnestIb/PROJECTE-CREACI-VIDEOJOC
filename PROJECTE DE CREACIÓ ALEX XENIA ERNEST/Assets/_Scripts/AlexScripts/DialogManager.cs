@@ -9,12 +9,13 @@ public class DialogManager : MonoBehaviour
     [SerializeField] string[] m_sentences;
     [SerializeField] TextMeshProUGUI m_TextDisplayed;
     [SerializeField] GameObject m_ContinueText;
-    [SerializeField] MainMenu m_MainMenu;
+    [SerializeField] GameObject m_Menu;
 
-    
+    public int cases = 1;
     private int index;
     public float m_TypingSpeed;
     private bool Happened;
+    
 
     void Start()
     {
@@ -49,7 +50,14 @@ public class DialogManager : MonoBehaviour
 
         if(m_sentences.Length-1 == index && !Happened) 
         {
-            m_MainMenu.EnterMenu();
+            if(cases == 0)
+            {
+                m_Menu.GetComponent<EndMenu>().EnterMenu();
+            }
+            else m_Menu.GetComponent<MainMenu>().EnterMenu();
+            
+
+            
             Happened = true;
         }
         

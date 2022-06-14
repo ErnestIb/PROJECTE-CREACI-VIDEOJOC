@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Para provar.unity
     guid: 830c4989c2075da418310d458ecf1b8d
+  - enabled: 1
+    path: Assets/Scenes/DeathScreen.unity
+    guid: 96eb11e1a46efde4f92d86c14cc46ddc
   m_configObjects: {}
