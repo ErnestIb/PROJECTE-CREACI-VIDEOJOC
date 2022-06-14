@@ -45,6 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Awa
+    uniqueID: 2986697011
+    locked: 0
   - name: Base
     uniqueID: 872985443
     locked: 0
