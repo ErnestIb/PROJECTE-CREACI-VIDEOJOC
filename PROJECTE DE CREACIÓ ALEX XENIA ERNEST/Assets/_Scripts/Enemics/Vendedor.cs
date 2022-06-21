@@ -2,17 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vendedor : MonoBehaviour
+public class Vendedor : MonoBehaviour, ITakeDamage
 {
-    // Start is called before the first frame update
-    void Start()
+    public float life = 100;
+    Animator animator;
+
+    private void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    //Rebre mal
+    public void TakeDamage(float damage)
     {
-        
+        animator.SetTrigger("Damage");
+
+        life -= damage;
+
+        if (life <= 0)
+        {
+            animator.SetTrigger("Death");
+        }
+    }
+
+   
+    public void Dead()
+    {
+        Destroy(this.gameObject);
+    }
+
+    public void BoingSound()
+    {
+        AudioManager.PlaySound("Boing", GetComponent<AudioSource>());
+    }
+    public void DeathSound()
+    {
+        AudioManager.PlaySound("VendedorDeath", GetComponent<AudioSource>());
     }
 }
