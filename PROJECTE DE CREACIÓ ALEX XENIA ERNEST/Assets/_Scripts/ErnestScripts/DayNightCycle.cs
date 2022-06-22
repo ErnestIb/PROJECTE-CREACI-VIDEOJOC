@@ -11,6 +11,9 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField]
     public Light2D playerLight;
 
+    [SerializeField]
+    public Light2D shopLight;
+
     public float time;
     
     public LightningScript lightningScript;
@@ -59,6 +62,7 @@ public class DayNightCycle : MonoBehaviour
         }
         
         PlayerLightIntensity(-0.001f);
+        ShopLightIntensity(-0.001f);
 
     }
 
@@ -70,6 +74,7 @@ public class DayNightCycle : MonoBehaviour
         }
         
         PlayerLightIntensity(0.001f);
+        ShopLightIntensity(0.001f);
 
     }
     
@@ -82,6 +87,12 @@ public class DayNightCycle : MonoBehaviour
     {
         if(!(playerLight.intensity>=0.54))
         playerLight.intensity += intensity;
+    }
+
+    public void ShopLightIntensity(float intensity)
+    {
+        if (!(shopLight.intensity >= 0.54))
+            shopLight.intensity += intensity;
     }
 
 }
