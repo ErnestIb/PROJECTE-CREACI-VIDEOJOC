@@ -31,13 +31,8 @@ public class Vendedor : MonoBehaviour, ITakeDamage
     {
         Destroy(this.gameObject);
     }
-
-    public void BoingSound()
-    {
-        AudioManager.PlaySound("Boing", GetComponent<AudioSource>());
-    }
     public void DeathSound()
     {
-        AudioManager.PlaySound("VendedorDeath", GetComponent<AudioSource>());
+        AudioManager.PlaySound("BoomRacoon", GetComponent<AudioSource>());
     }
 }

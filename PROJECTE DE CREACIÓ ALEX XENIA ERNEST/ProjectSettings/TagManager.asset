@@ -60,6 +60,9 @@ TagManager:
   - name: Plataforma inici
     uniqueID: 3019982651
     locked: 0
+  - name: Flors
+    uniqueID: 2625436473
+    locked: 0
   - name: Player
     uniqueID: 3351228729
     locked: 0
