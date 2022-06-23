@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 496434575
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 7860893253022973495, guid: d19a5b5aba58689489f684bb33e6c1d9,
     type: 3}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 50
   velocity: 1
-  damage: 10
+  damage: 5
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
