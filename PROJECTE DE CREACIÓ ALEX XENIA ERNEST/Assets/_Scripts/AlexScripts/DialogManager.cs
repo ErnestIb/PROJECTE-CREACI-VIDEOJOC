@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -11,7 +11,6 @@ public class DialogManager : MonoBehaviour
     [SerializeField] GameObject m_ContinueText;
     [SerializeField] GameObject m_Menu;
 
-    public int cases = 1;
     private int index;
     public float m_TypingSpeed;
     private bool Happened;
@@ -50,15 +49,15 @@ public class DialogManager : MonoBehaviour
 
         if(m_sentences.Length-1 == index && !Happened) 
         {
-            if(cases == 0)
+            if(m_Menu.GetComponent<EndMenu>() != null)
             {
                 m_Menu.GetComponent<EndMenu>().EnterMenu();
+                Happened = true;
+    
             }
             else m_Menu.GetComponent<MainMenu>().EnterMenu();
-            
-
-            
             Happened = true;
+
         }
         
         if (Input.GetKeyDown(KeyCode.Space) && m_ContinueText.active)

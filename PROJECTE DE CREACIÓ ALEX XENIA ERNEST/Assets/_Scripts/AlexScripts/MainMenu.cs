@@ -30,13 +30,11 @@ public class MainMenu : MonoBehaviour
 
     private void Update() {
         m_Animator.SetBool("IntroDone", m_IntroDone);
-        m_Animator.SetBool("Settings", m_Settings);
-        m_Animator.SetBool("Play", m_Play);
     }
 
     public void EnterSettings() {ChangeState(MenuState.Settings);}
     public void ExitSettings() {ChangeState(MenuState.MainMenu);}
-    public void EnterPlay() {ChangeState(MenuState.Play);}
+    public void EnterPlay() {ChangeState(MenuState.Play); SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);}
     public void EnterMenu() {ChangeState(MenuState.MainMenu);}
 
 
@@ -59,10 +57,10 @@ public class MainMenu : MonoBehaviour
                 case MenuState.MainMenu:
                     break;
                 case MenuState.Settings:
+                m_Animator.SetBool("Settings", false);
+
                 m_Settings = false;
                     break;
-                case MenuState.Play:
-                    break;               
             }
         }
 
@@ -76,12 +74,9 @@ public class MainMenu : MonoBehaviour
                 m_IntroDone = true;
                     break;
                 case MenuState.Settings:
+                m_Animator.SetBool("Settings", true);
                 m_Settings = true;
                     break;
-                case MenuState.Play:
-                m_Play = true;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-                    break;   
             }
         }
 
